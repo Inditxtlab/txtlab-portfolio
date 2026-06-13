@@ -1,6 +1,6 @@
 :root {
-    --font-titre: "Cormorant Garamond", serif;
-    --font-paragraph:"Sulphur Point", sans-serif;
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body:"Sulphur Point", sans-serif;
     
   --primary-900: #3d2b73;
   --primary-700: #5a43a5;
