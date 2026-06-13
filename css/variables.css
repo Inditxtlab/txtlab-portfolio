@@ -1,0 +1,22 @@
+:root {
+    --font-titre: "Cormorant Garamond", serif;
+    --font-paragraph:"Sulphur Point", sans-serif;
+    
+  --primary-900: #3d2b73;
+  --primary-700: #5a43a5;
+  --primary-500: #7357e8;
+  --primary-300: #a58ff2;
+  --primary-100: #e8e1fa;
+
+  --accent-500: #ff916b;
+  --accent-300: #ffc0a8;
+
+  --neutral-900: #222222;
+  --neutral-500: #555555;
+  --neutral-300: #eaeaea;
+  --neutral-100: #fafaf8;
+
+  --radius: 16px;
+
+  --transition: 0.3s ease;
+}

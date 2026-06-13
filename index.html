@@ -3,9 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon portfolio - txtlab</title>
+    <title>Mon Portfolio | txt.lab</title>
+    <link rel="stylesheet" href="variables/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+TAS+Beginner:wght@400..700&family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Hello My Portfolio </h1>
+<body class="bullet-journal-bg">
+    <!--HERO-->
+    <header class="hero">
+        <div class="logo">
+            <span class="logo-text">txt.lab - Indira Ramirez<span class="dot">.</span></span>
+        <p class="logo-subtitle">Laboratoire d'idees</p>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#accueil" class="active"></a>Accueil</li>
+            <li><a href="apropos"></a>À propos</li>
+            <li><a href="#projets"></a>Projets</li>
+            <li><a href="#experiences"></a>Experiences</li>
+            <li><a href="#outils"></a>Outils</li>
+            <li><a href="contact"></a>Contact</li>
+        </ul>
+        </nav>
+        <button class="theme-toggle" aria-label="Mode"></button>
+    </header>
+    <main>
+        <section id="accueil" class="accueil">
+            <div class="hero-intro">
+                <span class="badge">Spécialiste Contenu & Web</span>
+                <h1>Indira <br> <span class="highlight">Ramírez Terán</span></h1>
+                <p class="tagline">Je transforme les idées en experiences digitales à travers le contenu, la stratégie et le web.</p>
+                <div class="hero-actions">
+                    <a href="Projets">Voir Projets</a>
+                    <a href="cv.pdf">Telecharge CV</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="">Linkedin</a>
+                    <a href="">Github</a>
+                    <a href=""></a>E-mail
+                </div>
+            </div>
+
+            <div class="hero-visuel">
+                <div class="avatar-container">
+                    <img src="/assets/images/avatar-indira.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="apropos" class="apropos">
+            <div class="about-card">
+                <h2>À propos de moi</h2>
+                <p>Professionnelle de la communication digitale avec une double culture : éditoriale et technique. Je coordonne des projets de contenu et de développement web, de la stratégie jusqu'à la mise en œuvre.</p>
+                <div class="about-metrics">
+                    <div>items1</div>
+                    <div>items2</div>
+                    <div>items3
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projets" class="projets">
+            <div class="section-header">
+                <h2>Projets à la une</h2>
+            </div>
+<div>
+    <article></article>
+</div>
+<div>
+    <article></article>
+</div>
+<div>
+    <article></article>
+</div>
+        </section>
+        <section id="experience" class="experience">Expériences</section>
+        <section id="outils" class="outils">Les outils du laboratoire</section>
+        <section id="education" class="education">Formation</section>
+        <section id="contact" class="contact">Vous avez un projet en tête ?</section>
+    </main>
+    <footer class="footer">
+        <p>2026 Indira Ramirez Teran</p>
+        <p></p>
+        <a href="#accueil" class="back-to-top">Retour en haut ↑</a>
+    </footer>
 </body>
 </html>
