@@ -1,7 +1,11 @@
+/*==VARIABLES ET CONFIGURATION GLOBALE==*/
+
 :root {
-    --font-heading: "Cormorant Garamond", serif;
+    /*Typo */
+    --font-heading: "Space Grotesk", sans-serif; 
     --font-body:"Sulphur Point", sans-serif;
-    
+
+    /*¨Palette de couleurs*/
   --primary-900: #3d2b73;
   --primary-700: #5a43a5;
   --primary-500: #7357e8;
@@ -16,7 +20,12 @@
   --neutral-300: #eaeaea;
   --neutral-100: #fafaf8;
 
+  /*bg bullet journal*/
+  --bg-paper: #fcfcf9;
+  --bg-dots: #e5e5e0;
+
   --radius: 16px;
 
   --transition: 0.3s ease;
+    
 }
