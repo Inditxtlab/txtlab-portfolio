@@ -82,7 +82,7 @@ h2 {
 font-size: 3rem;
 }
 
-.sub-intro{
+.sub-intro {
     font-size: 1rem;
     color: #3D2B73;
     padding-bottom: 2rem;
@@ -116,15 +116,16 @@ font-size: 3rem;
 
 .projet-card {
     background-color: #E8E1FA;
-    height: 20rem;
+    height: 25rem;
     width: 33.3rem;
     border-radius: 10px;
     text-align: center;
     padding-bottom: 1rem;
 }
 .projet-img {
-    max-height: 60%;
-    align-items: center;
+    max-height: 65%;
+    padding: 1rem;
+
 }
 .projets-tags {
     display: flex;
@@ -141,22 +142,11 @@ font-size: 3rem;
     border-radius: 999px;
 }
 
-.contact-button {
-    background: #A58FF2;
-    color: #3D2B73 ;
-    border: #3D2B73 solid 1px;
-    border-radius: 15px; 
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    margin-bottom: 2rem;
+.projet-description {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
-.contact-button:hover{
-    background-color: #FFC0A8;
-    color: #E8E1FA;
-
-}
 .projet-title {
     padding-bottom: 2rem;
 }
@@ -167,4 +157,165 @@ h3{
 }
 p{
     font-size: 0.7rem;
+}
+
+.parcours-competences , #contact {
+    margin-top: 15rem;
+}
+
+.timeline {
+  border-left: 2px solid #A58FF2;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline article {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.timeline article:hover{ 
+    transform: translateX(4px);
+}
+.timeline article::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background:#A58FF2;
+  position: absolute;
+  left: calc(-2rem - 6px); 
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  top: 4px;
+}
+
+.timeline article:hover::before{
+    background-color:#3D2B73;
+    transform: scale(1.3);
+}
+
+.timeline article span{
+    font-size: 0.75rem;
+    font-weight: bold;
+    color:#3D2B73; 
+    display: block; 
+}
+.timeline article h3 {
+    margin: 0.2rem 0; 
+    color: #A58FF2;
+}
+
+.timeline article:hover h3 {
+    color:#3D2B73; 
+}
+
+.timeline article p {
+    font-size: 0.7rem;
+    margin: 0;
+}
+.parcours-competences {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+.parcours-competences #parcours, 
+.parcours-competences .competences{
+    flex: 1;
+}
+.parcours-title, .competences-title {
+    margin-bottom: 3rem;
+}
+.resume-exp{
+    font-size: 0.3rem;
+    font-weight: 600;
+    padding: 1rem;
+    color: #A58FF2;
+    text-transform:uppercase
+}
+
+.competences{
+    width: 100%
+}
+
+.grid-competences{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem; 
+    background-color:#FBFAF7; 
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.icon-grid {
+    width: 70px;
+    height: 70px;
+    background-color:#A58FF2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+.icon-grid img {
+    width: 30px;
+    height: 30px;
+}
+
+.grid-item h3 {
+    margin: 0;
+}
+
+.contact-title{
+    font-size: 1rem;
+}
+
+#contact{
+    background-color: #EAEAEA; 
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+   flex-direction: wrap;
+   gap: 3rem;
+}
+
+.contact-intro, .contact-form, .contact-media {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contact-button {
+    background: #A58FF2;
+    color: #3D2B73 ;
+    border: #A58FF2 solid 1px;
+    border-radius: 15px; 
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.contact-button:hover{
+    background-color: #FFC0A8;
+    color: #E8E1FA;
+    border: #FFC0A8 solid 1px;
+
+}
+
+.media-liens {
+    text-decoration: none;
+    list-style: none;
+}
+
+.contact-description{
+    font-size: 1rem;
+    color: #3D2B73;
+    padding-bottom: 2rem;
+    display: flex;
+    width: 80%;
+
 }
