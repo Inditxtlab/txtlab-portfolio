@@ -111,7 +111,6 @@ font-size: 3rem;
 .projets-section {
     display: flex; 
     height: 20rem;
-
     gap: 3rem;
 }
 
@@ -121,6 +120,25 @@ font-size: 3rem;
     width: 33.3rem;
     border-radius: 10px;
     text-align: center;
+    padding-bottom: 1rem;
+}
+.projet-img {
+    max-height: 60%;
+    align-items: center;
+}
+.projets-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+    padding: 0.1rem;
+}
+.tag {
+    background-color:#A58FF2;
+    color:#E8E1FA;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
 }
 
 .contact-button {
@@ -130,13 +148,23 @@ font-size: 3rem;
     border-radius: 15px; 
     padding: 0.5rem 1rem;
     cursor: pointer;
-    transition: background-color 0.2s ease color 0.2s ease;
-
-    
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 2rem;
 }
 
-.contact.button:hover{
+.contact-button:hover{
     background-color: #FFC0A8;
     color: #E8E1FA;
 
+}
+.projet-title {
+    padding-bottom: 2rem;
+}
+
+h3{
+    font-size: 0.7rem;
+    color: #3D2B73;
+}
+p{
+    font-size: 0.7rem;
 }
