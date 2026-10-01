@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-<header class="site-header">
+<header class="site-header" id="Accueil">
         <div class="logo-header">
     <a class="avatar" href="#Accueil" aria-label="Retour à l'accueil">
         <img src="assets/images/avatar-indira.png" alt="avatar Indira"
@@ -128,55 +128,94 @@ de l’idée à la mise en ligne —.
     <section class="competences">
         <h2 class="competences-title">Competences clés</h2>
         <div class="grid-competences">
-
             <div class="grid-item">
                 <div class="icon-grid">
-                <img src="assets/icons/pen-nib-thin.svg" alt="">
+                <img class="img-item" src="assets/icons/pen-nib-thin.svg" alt="">
                 </div>
-                  <h3>Rédaction web & éditorial</h3>
+                  <h3 class="item-title">Rédaction web & éditorial</h3>
             </div>
             <div class="grid-item">
                 <div class="icon-grid">
                     <img src="assets/icons/magnifying-glass-thin.svg" alt="">
                     </div>
-                <h3>SEO</h3>
+                <h3 class="item-title">SEO</h3>
             </div>
             <div class="grid-item">
                 <div class="icon-grid">
                 <img src="assets/icons/file-text-thin.svg" alt="">
                 </div>
-                <h3>Gestion de contenu</h3>
+                <h3 class="item-title">Gestion de contenu</h3>
             </div>
             <div class="grid-item">
                 <div class="icon-grid">
-                    ><img src="assets/icons/chat-circle-dots-thin.svg" alt="">
+                    <img src="assets/icons/chat-circle-dots-thin.svg" alt="">
                 </div>
-                <h3>Communication digitale</h3>
+                <h3 class="item-title">Communication digitale</h3>
             </div>
             <div class="grid-item">
                 <div class="icon-grid">
-                <img src="assets/icons/code-thin.svg" alt=""></div>
-                <h3>Intégration web</h3>
+                <img src="assets/icons/code-thin.svg" alt="">
+                </div>
+                <h3 class="item-title">Intégration web</h3>
             </div>
             <div class="grid-item">
                 <div class="icon-grid">
                 <img src="assets/icons/layout-thin.svg" alt="">
                 </div>
-                <h3>UX/UI</h3>
+                <h3 class="item-title">UX/UI</h3>
             </div>
             <div class="grid-item">
-                <div class="icon-grid"><img src="assets/icons/person-arms-spread-thin.svg" alt=""></div>
-                <h3>Accesibilité</h3>
+                <div class="icon-grid"><img src="assets/icons/person-arms-spread-thin.svg" alt="">
                 </div>
-            <div class="grid-item">
-                <div class="icon-grid">
-                <img src="assets/icons/kanban-thin.svg" alt=""></div>
-                <h3>Gestion de projets web & éditoriaux</h3>
+                <h3 class="item-title">Accesibilité</h3>
             </div>
             <div class="grid-item">
                 <div class="icon-grid">
-                <img src="assets/icons/code-block-thin.svg" alt=""></div>
-            <h3>Développement web </h3></div>
+                <img src="assets/icons/kanban-thin.svg" alt="">
+                </div>
+                <h3 class="item-title">Gestion de projets web & éditoriaux</h3>
+            </div>
+            <div class="grid-item">
+                <div class="icon-grid">
+                    <img src="assets/icons/code-block-thin.svg" alt="">
+                </div>
+                <h3 class="item-title">Développement web </h3>
+            </div>
+        </div>
+        <div class="tools-box">
+            <div class="tool">
+                <img src="assets/icons/bxl--wordpress.svg" alt="">WordPress</div>
+            <div class="tool">
+                <img src="assets/icons/bxl--figma.svg" alt="">Figma</div>
+            <div class="tool">
+                <img src="assets/icons/bxl--trello.svg" alt="">Trello</div>
+            <div class="tool">
+                <img src="assets/icons/bxl--notion.svg" alt="">Notion</div>
+            <div class="tool">
+                <img src="assets/icons/bxl--react.svg" alt="">React</div>
+            <div class="tool">
+                <img src="assets/icons/bxl--laravel.svg" alt="">Laravel</div>
+        </div>
+            <div class="engagement-section">
+                <div class="learn-section">
+                    <h3>En apprentissage constant</h3>
+                    <div class="learn-tags">
+                        <span class="tag">GEO</span>
+                        <span class="tag">UX Writting</span>
+                        <span class="tag">IA Generative</span>
+                        <span class="tag">Conception web</span>
+                        <span class="tag">Gestion de projet</span>
+                         <span class="tag">Python</span>
+                    </div>
+                </div>
+                <div class="engagements-web">
+                    <h3>Engagements web</h3>
+                    <h4 class="sub-title">Eco-conception</h4>
+                    <p class="projet-description">Des sites plus légers, plus rapides, avec un impact environnemental reduit.</p>
+                    <h4 class="sub-title">Accesibilité</h4>
+                    <p class="projet-description">Des contenus et interfaces utilisables par toutes et tous, sans barrières</p>
+                </div>
+            </div>
         </div>
     </section>
     </div>
@@ -190,7 +229,7 @@ de l’idée à la mise en ligne —.
 
     <div class="contact-form">
     <form action="" method="post">
-        <label for="prenom">Prénom</label>
+        <label for="prenom" id="prenom">Prénom</label>
         <input type="text" id="prenom" name="prenom">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email">
@@ -201,16 +240,22 @@ de l’idée à la mise en ligne —.
     </form>
     </div>
     <div class="contact-media">
-    <ul class="media-liens">
-        <li> <a href="">Linkedin</a></li>
-    <li><a href="">Github</a></li>
-    <li><a href="mailto:indirramirez@gmail.com"></a>indirramirez@gmail.com</a></li>
+    <ul class="social-list">
+        <li class="social-item"> 
+            <img class="social-icon" src="assets/icons/linkedin-logo-thin.svg" alt=""><a href="https://www.linkedin.com/in/indira-ramirez-teran/" target="_blank" rel="noopener">Linkedin</a></li>
+    <li class="social-item">
+        <img class="social-icon" src="assets/icons/github-logo-thin.svg" alt=""><a href="https://github.com/Inditxtlab" target="_blank" rel="noopener">Github</a>
+    </li>
+    <li class="social-item">
+        <img class=""social-icon" src="assets/icons/envelope-thin.svg" alt=""><a href="mailto:indirramirez@gmail.com" target="_blank" rel="noopener">indirramirez@gmail.com</a>
+    </li>
     </ul>
     </div>
     </div>
-    </footer>
-<div class="tag">© Indira Ramirez Teran | 2026
-<div><a href="#accueil" class="Haut-de-page">Haut de page</a>
+    <div class="end-site">
+    <p class="copyright">© Indira Ramirez Teran | 2026</p>
+    <a href="#Accueil" class="back-to-top">Haut de page</a>
+    </div>
 </div>
     </footer>
     </main>
