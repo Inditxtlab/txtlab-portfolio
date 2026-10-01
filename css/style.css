@@ -116,11 +116,11 @@ font-size: 3rem;
 
 .projet-card {
     background-color: #E8E1FA;
-    height: 25rem;
+    height: 27rem;
     width: 33.3rem;
     border-radius: 10px;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 .projet-img {
     max-height: 65%;
@@ -152,11 +152,11 @@ font-size: 3rem;
 }
 
 h3{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #3D2B73;
 }
 p{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 .parcours-competences , #contact {
@@ -317,5 +317,40 @@ p{
     padding-bottom: 2rem;
     display: flex;
     width: 80%;
+
+}
+
+/*FORMULAIRE*/
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    gap:0.8rem; 
+}
+
+.contact-form label {
+    font-size: 0.7rem;
+    color:#3D2B73;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea{
+    font:inherit; 
+    font-size: 0.75rem;
+    padding: 0.5rem; 
+    border: 1px solid #A58FF2;
+    border: 8px;
+    background: #FFFF;
+    color:#3D2B73
+}
+
+.envoyer-button{
+    background: color #3d2b73;
+    color:#A58FF2; 
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+    padding: 0.5rem 1rem;
 
 }
