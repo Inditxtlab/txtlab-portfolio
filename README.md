@@ -1,9 +1,10 @@
 Projet : Mon Portfolio
 
 Objetif : 
-Cree un portfolio narratif et pro inspire du concept d'experimentation créative. Un portfolio que montre ma personalite en tant que mes competences. 
-
+Créer un portfolio qui montre avec efficacité mes compétences, mon parcours et mes intérêts.
 Technologies : 
 HTML 
 CSS
 JavaScript
+Git
+GitPages

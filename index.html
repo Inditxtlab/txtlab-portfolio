@@ -8,190 +8,193 @@
     content="Portfolio Indira Ramirez Teran - rédaction web, SEO et intégration web">
     <meta property="og:title" content="Indira Ramirez Teran - Portfolio">
     <meta property="og:description" content="Contenu, SEO/GEO et intégration web, de l'idée à la mise en ligne">
-    <meta property="og: type" content="website">
-    <title> Indira Ramirez - Communication digitale & développement web </title>
+    <meta property="og:type" content="website">
+    <title>Indira Ramirez - Communication digitale & Intégration web </title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="container">
+<body>
 <header class="site-header" id="accueil">
-        <div class="logo-header">
-    <a class="avatar" href="#Accueil" aria-label="Retour à l'accueil">
-        <img src="assets/images/avatar-indira.png" alt="avatar Indira"
-        width="500"
-        height="500">
-        <span class="logo">Indira Ramirez Teran</span></a>
-    </div>
-    <nav class="menu">
-        <ul class="nav-links">
-        <li><a href="#projets">Projets</a></li>
+    <a class="site-header__name" href="#accueil" aria-label="Retour à l'accueil">
+        <img class="site-header__avatar" src="assets/images/avatar-indira.png" alt=""
+        width="48"
+        height="48">
+        <span class="site-header__brand">Indira Ramirez Teran</span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+        <ul class="main-nav__list">
+        <li><a href="#projects">Projets</a></li>
         <li><a href="#parcours">Parcours</a></li>
-        <li> <a href="#apropos">A propos</a></li>
+        <li> <a href="#apropos">À propos</a></li>
         <li> <a href="#contact">Contact</a></li>
-        <li> <button class="nav-button" aria-label="Téléchargez mon CV">Téléchargez mon CV</button></li>
+        <li> <a class="btn-outline" href="assets/documents/CV" download>Téléchargez mon CV</a></li>
          </ul>
     </nav>
     </header>
      <main>
-    <section class="intro-section">
-        <p class="intro">
-        Je suis Indira et je transforme les idées en experiences digitales bien pensées, ainsi que en applications web qui se sentent bien dans leur peau : utiles, évolutives et épurées. 
+    <section class="hero">
+        <h1 class="hero__title">
+        Je suis Indira et je transforme les idées en expériences numériques bien pensées, ainsi qu'en applications web qui se sentent bien dans leur peau : utiles, évolutives et épurées. 
+        </h1>
+    <p class="hero__subtitle">
+Contenu, Web, UX éditoriale, SEO/GEO : 
+de l’idée à la mise en ligne.
     </p>
-    <p class=sub-intro>
-Contenu, Web, UX éditoriale, SEO/GEO —
-de l’idée à la mise en ligne —.
-    </p>
-<div class=highlights>
-    <div class="item">10 ans d'expérience en contenu</div>
-    <div class="item">Paris - France</div>
-    <div class="item"> ES/FR/EN</div>
-</div>
+<ul class="hero__highlights">
+    <li class="hero__hightlight">10 ans d'expérience en contenu</li>
+    <li class="hero__hightlight">Paris - France</li>
+    <li class="hero__hightlight"> ES/FR/EN</li>
+    </ul>
 </section>
-    <section id="projets">
-        <div class="block-content">
-        <img class="social-icon" src="assets/icons/undraw_asterisk.svg" alt="Projets">
-        <h2 class="projet-title">Projets - Experiments</h2>
+    <section id="projects">
+        <div class="section-heading">
+        <img class="icon" src="assets/icons/undraw_asterisk.svg" alt="projets">
+        <h2 class="project-title">Projets - Experiments</h2>
         </div>
-        <div class="projets-section">
-            <div class="projet-card">
-                <img class="projet-img" src="assets/illustrations/aditya-sahu-portfolio-unsplash.jpg" alt="Aperçu du site">
-                <div>
-                <div class="projets-tags">
+        <div class="project-section">
+            <div class="project-card">
+                <img class="project-card__image" src="assets/illustrations/aditya-sahu-portfolio-unsplash.jpg" alt="Page d'accuel de mon portfolio" width="600" height="360" loading="lazy">
+                <div class="project-card__body">
+                <div class="tag-list">
                     <span class="tag">Conception & Integration web</span>
                     <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
                         <span class="tag">JS Vanilla</span>
-                        <span class="tag">Github</span>
+                        <span class="tag">GitHub</span>
                     </div>
                     <div>
-                <h3 class="projet-card-title">Mon portfolio - Git Pages</h3>
-                <p class="projet-description">Crée un portfolio avec un design original, épurée et leger qui demontre mes competences et ma creativite</p>
+                <h3 class="project-card__title">Mon portfolio - Git Pages</h3>
+                <p class="project-description">Crée un portfolio avec un design original, épuré et léger qui démontre mes compétences et ma créativité</p>
+                <a class="project-card__link" href="https://github.com/Inditxtlab">Voir le code</a>
                 </div>
             </div>
             </div>
-            <div class="projet-card">
-                <img class="projet-img" src="assets/illustrations/aditya-sahu-refont-unsplash.jpg" alt="Image site">
-                <div>
-                <div class="projets-tags">
-                    <span class="tag">UX/UI</span> <span class="tag">WordPress</span><span class="tag">Contenu narratif et creative
+            <div class="project-card">
+                <img class="project-card__image" src="assets/illustrations/aditya-sahu-refont-unsplash.jpg" alt="Page d'accuel d'Indirocracia" width="600" height="360" loading="lazy">
+                <div class="project-card__body">
+                <div class="tag-list">
+                    <span class="tag">UX/UI</span> <span class="tag">WordPress</span><span class="tag">Contenu narratif et créatif
                     </span>
                 </div>
-                <h3 class="projet-card-title">Refonte CMS - Indirocracia</h3>
-                <p class="projet-description">Refont du site Indirocracia, journal d'experimentation narratif en ligne depuis 2014</p>
+                <h3 class="project-card__title">Refonte CMS - Indirocracia</h3>
+                <p class="project-description">Refonte du site Indirocracia, journal d'experimentation narratif en ligne depuis 2014</p>
+                <a class="project-card__link" href="https://indirocracia.com">Visiter le blog</a>
                 </div>
             </div>
-            <div class="projet-card">
-                <img class="projet-img" src="assets/illustrations/aditya-sahu-voyage-unsplash.jpg" alt="Periplia, gestion de voyages en groupe">
-                <div>
-                <div class="projets-tags">
+            <div class="project-card">
+                <img class="project-card__image" src="assets/illustrations/aditya-sahu-voyage-unsplash.jpg" alt="Projet fullstack : Periplia, gestion de voyages en groupe" width="600" height="360" loading="lazy">
+                <div class="project-card__body">
+                <div class="tag-list">
                     <span class="tag">Frontend</span><span class="tag">Backend</span>
                     <span class="tag">Base de données</span>
                     <span class="tag">Gestion de projets</span>
                 </div>
-                <h3 class="projet-card-title">Conception et developpement web - App de voyages Periplia</h3>
-                <p class="projet-description">Application web pour la gestion de voyages en groupe</p>
+                <h3 class="project-card__title">Projet Periplia: App de voyages</h3>
+                <p class="project-description">Application web pour la gestion de voyages en groupe</p>
+                <a class="project-card__link" href="https://github.com/Inditxtlab">Voir le code</a>
                 </div>
             </div>
         </div>
     </section>
-    <div class="parcours-competences">
-        <section id="parcours">
-            <div class="block-content">
-            <img class="social-icon" src="assets/icons/undraw_bike.svg" alt="">
-            <h2 class="parcours-title">Mon parcours</h2>
+    <div class="resume-layout">
+        <section id="parcours" class="resume">
+            <div class="section-heading">
+            <img class="icon" src="assets/icons/undraw_bike.svg" alt="">
+            <h2 class="resume-title">Mon parcours</h2>
             </div>
             <div class="timeline">
-            <article>
-                <span>2008-2014</span>
+            <article class="timeline__item">
+                <span class="timeline__date">2008-2014</span>
                 <h3>Journalisme</h3>
-                <p>Formation et premiers pas dans le monde des medias </p>
-                    <p class="resume-exp">Observer, chercher, esprit critique, raconter</p>
+                <p>Formation et premiers pas dans le monde des médias </p>
+                    <p class="timeline__summary">Observer, chercher, esprit critique, raconter</p>
             </article>
-            <article>
-                <span>2015-2017</span>
-                <h3>Communication-DDHH</h3>
-                <p>Strategie, contenus, ONG's, community management</p>
-                <p class="resume-exp">Cree de contenu et faire circuler des idées</p>
+            <article class="timeline__item">
+                <span class="timeline__date">2015-2017</span>
+                <h3>Communication & droits humains</h3>
+                <p>Stratégie, contenus, ONG, community management</p>
+                <p class="timeline__summary">Créer de contenu et faire circuler des idées</p>
             </article>
-            <article>
-                <span>2017-2019</span>
+            <article class="timeline__item">
+                <span class="timeline__date">2017-2019</span>
                 <h3>Management & relation client</h3>
                 <p>Responsable de franchise, 25 personnes, +1000 clients/sem</p>
-                <p class="resume-exp">Une equipe, des clients, des imprevus, de la performance</p>
+                <p class="timeline__summary">Une équipe, des clients, des imprévus, de la performance</p>
             </article>
-            <article>
-                <span>2021-2025</span>
+            <article class="timeline__item">
+                <span class="timeline__date">2021-2025</span>
                 <h3>France-Novastan</h3>
-                <p>Redaction web, SEO
-                </p> <p class="resume-exp">Nouvelles experiences, nouvelles apprentissages, redaction, reinvention</p>
+                <p>Rédaction web, SEO
+                </p> <p class="timeline__summary">Nouvelles expériences, nouveaux apprentissages, redaction, réinvention</p>
             </article>
-            <article><span>2024-2025</span>
-            <h3>Web & développement</h3>
-        <p>Simplon (DWWM), projets personnels et stage</p>
-        <p class="resume-exp">Comprendre et deconstruire ce qui se passe derriere l'ecran</p></article>
-            <article><span>Aujourd'hui</span>
-            <h3>Profil polyvalente, hybride et entusiaste</h3>
-        <p>Je cherche des endroits où ces différentes experiences peuvent se rencontrer</p><p class="resume-exp">Autonomie, monter en competences de façon permanent</p>
+            <article class="timeline__item"> <span class="timeline__date">2024-2025</span>
+                <h3>Web & développement</h3>
+                <p>Simplon (DWWM), projets personnels et stage</p>
+                <p class="timeline__summary">Comprendre et déconstruire ce qui se passe derrière l'écran</p>
+            </article>
+            <article class="timeline__item">
+                <span class="timeline__date">Aujourd'hui</span>
+            <h3>Profil polyvalent, hybride et enthousiaste</h3>
+        <p>Je cherche des endroits où ces différentes experiences peuvent se rencontrer</p><p class="timeline__summary">Autonomie, monter en competences de façon permanente</p>
     </article>
     </div>
     </section>
-    <section class="competences">
-        <div class="block-content">
-            <img class="social-icon" src="assets/icons/undraw_rocket.svg" alt="">
-        <h2 class="competences-title">Compétences clés</h2>
+    <section class="skills">
+        <div class="section-heading">
+            <img class="icon" src="assets/icons/undraw_rocket.svg" alt="fusse">
+        <h2 class="skills-title">Compétences clés</h2>
         </div>
-        <div class="grid-competences">
-            <div class="grid-item">
-                <div class="icon-grid">
-                <img class="img-item" src="assets/icons/pen-nib-thin.svg" alt="">
+        <div class="skills__grid">
+            <div class="skill">
+                <div class="skill__icon">
+                <img src="assets/icons/pen-nib-thin.svg" alt="pen-nib">
                 </div>
-                  <h3 class="item-title">Rédaction web & éditorial</h3>
+                  <h3>Rédaction web & éditorial</h3>
             </div>
-            <div class="grid-item">
-                <div class="icon-grid">
-                    <img src="assets/icons/magnifying-glass-thin.svg" alt="">
+            <div class="skill">
+                <div class="skill__icon">
+                    <img src="assets/icons/magnifying-glass-thin.svg" alt="magnifying-glass">
                     </div>
-                <h3 class="item-title">SEO</h3>
+                <h3>SEO</h3>
             </div>
-            <div class="grid-item">
-                <div class="icon-grid">
-                <img src="assets/icons/file-text-thin.svg" alt="">
+            <div class="skill">
+                <div class="skill__icon">
+                <img src="assets/icons/file-text-thin.svg" alt="file-text">
                 </div>
-                <h3 class="item-title">Gestion de contenu</h3>
+                <h3>Gestion de contenu</h3>
             </div>
-            <div class="grid-item">
-                <div class="icon-grid">
-                    <img src="assets/icons/chat-circle-dots-thin.svg" alt="">
+            <div class="skill">
+                <div class="skill__icon">
+                    <img src="assets/icons/chat-circle-dots-thin.svg" alt="chat-circle-dots">
                 </div>
-                <h3 class="item-title">Communication digitale</h3>
+                <h3>Communication digitale</h3>
             </div>
-            <div class="grid-item">
-                <div class="icon-grid">
-                <img src="assets/icons/code-thin.svg" alt="">
+            <div class="skill">
+                <div class="skill__icon">
+                <img src="assets/icons/code-thin.svg" alt="code">
                 </div>
-                <h3 class="item-title">Intégration web</h3>
+                <h3>Intégration web</h3>
             </div>
-            <div class="grid-item">
-                <div class="icon-grid">
-                <img src="assets/icons/layout-thin.svg" alt="">
+            <div class="skill">
+                <div class="skill__icon">
+                <img src="assets/icons/layout-thin.svg" alt="layout">
                 </div>
-                <h3 class="item-title">UX/UI</h3>
+                <h3>UX/UI</h3>
             </div>
-            <div class="grid-item">
-                <div class="icon-grid"><img src="assets/icons/person-arms-spread-thin.svg" alt="">
+            <div class="skill">
+                <div class="skill__icon"><img src="assets/icons/person-arms-spread-thin.svg" alt="person-arms-spread">
                 </div>
-                <h3 class="item-title">Accessibilité</h3>
+                <h3>Accessibilité</h3>
             </div>
-            <div class="grid-item">
-                <div class="icon-grid">
-                <img src="assets/icons/kanban-thin.svg" alt="">
+            <div class="skill">
+                <div class="skill__icon">
+                <img src="assets/icons/kanban-thin.svg" alt="kanban-thin">
                 </div>
-                <h3 class="item-title">Gestion de projets web & éditoriaux</h3>
+                <h3>Gestion de projets web & éditoriaux</h3>
             </div>
-            <div class="grid-item">
-                <div class="icon-grid">
-                    <img src="assets/icons/code-block-thin.svg" alt="">
+            <div class="skill">
+                <div class="skill__icon">
+                    <img src="assets/icons/code-block-thin.svg" alt="code-block-thin">
                 </div>
-                <h3 class="item-title">Développement web </h3>
+                <h3>Développement web </h3>
             </div>
         </div>
         <div class="tools-box">
@@ -208,13 +211,13 @@ de l’idée à la mise en ligne —.
             <div class="tool">
                 <img src="assets/icons/bxl--laravel.svg" alt="">Laravel</div>
         </div>
-            <div class="engagement-section">
-                <div class="learn-section">
-                    <div class="block-content">
-                        <img class="social-icon" src="assets/icons/undraw_person.svg" alt="">
+            <div class="commitment-section">
+                <div class="card-neutral">
+                    <div class="section-heading">
+                        <img class="icon" src="assets/icons/undraw_person.svg" alt="">
                     <h3>En apprentissage constant</h3>
                     </div>
-                    <div class="learn-tags">
+                    <div class="tag-list">
                         <span class="tag">GEO</span>
                         <span class="tag">UX Writing</span>
                         <span class="tag">IA</span>
@@ -223,59 +226,52 @@ de l’idée à la mise en ligne —.
                          <span class="tag">Python</span>
                     </div>
                 </div>
-                <div class="engagements-web">
-                    <div class="block-content">
-                        <img class="social-icon" src="assets/icons/undraw_tree.svg" alt="">
+                <div class="card-accent">
+                    <div class="section-heading">
+                        <img class="icon" src="assets/icons/undraw_tree.svg" alt="Eco-conception et Accesibilité">
                     <h3>Engagements web</h3>
                     </div>
-                    <h4 class="sub-title">Eco-conception</h4>
-                    <p class="projet-description">Des sites plus légers, plus rapides, avec un impact environnemental reduit.</p>
-                    <h4 class="sub-title">Accesibilité</h4>
-                    <p class="projet-description">Des contenus et interfaces utilisables par toutes et tous, sans barrières</p>
+                    <h4 class="commitment__title">Eco-conception</h4>
+                    <p class="commitment__text">Des sites plus légers, plus rapides, avec un impact environnemental réduit.</p>
+                    <h4 class="commitment__title">Accessibilité</h4>
+                    <p class="commitment__text">Des contenus et interfaces utilisables par toutes et tous, sans barrières.</p>
                 </div>
-            </div>
         </div>
     </section>
     </div>
-      </main>
-    <footer>
-    <div id="contact">
-        <div class="contact-intro">
-            <h3 class="contact-title">On travaille ensemble?</h3> 
-            <p class="contact-description">Je suis disponible et ouverte à nouveau oportunités que ce soit en CDI, CDD, en freelance ou en mission</p>
-            <button class="contact-button">Me contacter</button>
+    <section id="contact" class="contact">
+        <div class="contact__intro">
+            <h2 class="contact__title">On travaille ensemble?</h2> 
+            <p class="contact__description">Je suis disponible et ouverte à de nouvelles opportunités que ce soit en CDI, CDD, en freelance ou en mission</p>
         </div>
-    <div class="contact-form">
+    <div class="contact__form">
     <form action="" method="post">
         <label for="prenom">Prénom</label>
         <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" autocomplete="email" required>
         <label for="message">Message</label>
         <textarea name="message" id="message" required rows="5"></textarea>
-        <input class="envoyer-button" type="submit" value="Envoyer">
+        <input type="submit" value="Envoyer">
     </form>
     </div>
-    <div class="contact-media">
-    <ul class="social-list">
-        <li class="social-item"> 
-            <img class="social-icon" src="assets/icons/linkedin-logo-thin.svg" alt=""><a href="https://www.linkedin.com/in/indira-ramirez-teran/" target="_blank" rel="noopener">LinkedIn</a></li>
-    <li class="social-item">
-        <img class="social-icon" src="assets/icons/github-logo-thin.svg" alt=""><a href="https://github.com/Inditxtlab" target="_blank" rel="noopener">GitHub</a>
+    <ul class=" contact__links social-links">
+        <li class="social-links__item"> 
+            <img class="icon" src="assets/icons/linkedin-logo-thin.svg" alt=""><a href="https://www.linkedin.com/in/indira-ramirez-teran/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li class="social-links__item">
+        <img class="icon" src="assets/icons/github-logo-thin.svg" alt=""><a href="https://github.com/Inditxtlab" target="_blank" rel="noopener">GitHub</a>
     </li>
-    <li class="social-item">
-        <img class="social-icon" src="assets/icons/envelope-thin.svg" alt=""><a href="mailto:indirramirez@gmail.com" target="_blank" rel="noopener">indirramirez@gmail.com</a>
+    <li class="social-links__item">
+        <img class="icon" src="assets/icons/envelope-thin.svg" alt=""><a href="mailto:indirramirez@gmail.com">indirramirez@gmail.com</a>
     </li>
     </ul>
-    </div>
-    </div>
-    <div class="end-site">
-    <p class="copyright">© Indira Ramirez Teran | 2026</p>
-    <a href="#accueil" class="back-to-top">Haut de page
-        <img class="social-icon" src="assets/icons/undraw_fun-arrow.svg" alt="Haut de page">
+</section>
+    </main>
+    <footer class="site-footer">
+    <p class="site-footer__copyright">© Indira Ramirez Teran | <span id="year">2026</span></p>
+    <a href="#accueil" class="site-footer__top-link">Haut de page
+        <img class="icon" src="assets/icons/undraw_fun-arrow.svg" alt="Haut de page">
     </a>
-    </div>
-</div>
     </footer>
     <script src="js/main.js" defer></script>
 
