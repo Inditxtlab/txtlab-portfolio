@@ -20,15 +20,15 @@
 <body>
 <header class="site-header" id="accueil">
     <a class="site-header__name" href="#accueil" aria-label="Retour à l'accueil">
-        <img class="site-header__avatar" src="assets/images/avatar-indira.png" alt=""
+        <img class="site-header__avatar" src="assets/images/photoprofil.png" alt=""
         width="48"
         height="48">
         <span class="site-header__brand">Indira Ramirez Teran</span></a>
     <nav class="main-nav" aria-label="Navigation principale">
         <ul class="main-nav__list">
         <li><a href="#projects">Projets</a></li>
-        <li><a href="#parcours">Parcours</a></li>
         <li> <a href="#apropos">À propos</a></li>
+        <li><a href="#parcours">Parcours</a></li>
         <li> <a href="#contact">Contact</a></li>
         <li> <a class="btn-outline" href="assets/documents/CV" download>Téléchargez mon CV</a></li>
          </ul>
@@ -40,9 +40,10 @@
         <span class="relief">Bonjour !</span> Je suis <span class="relief">Indira</span> et je transforme <span class="relief">les idées</span> en <span class="relief">experiences numériques</span> et de contenu bien pensées, ainsi qu'en applications web qui se sentent bien dans leur peau: <br>
         <span class="relief">utiles, évolutives et épurées. 
         </h1>
-    <p class="hero__subtitle">
-Contenu et Intégration web : de l’idée à la mise en ligne.
-    </p>
+    <div class="hero__intro">
+    <p class="hero__subtitle">Contenu & Intégration web : de l'idée à la mise en ligne.</p>
+    <a class="btn-primary" href="https://www.linkedin.com/in/indira-ramirez-teran/" target="_blank" rel="noopener" aria-label="Me contacter sur LinkedIn (nouvel onglet)">Mon LinkedIn</a>
+</div>
 <ul class="hero__highlights">
     <li class="hero__hightlight">10 ans d'expérience en contenu</li>
     <li class="hero__hightlight">Paris - France</li>
@@ -61,7 +62,7 @@ Contenu et Intégration web : de l’idée à la mise en ligne.
                 <div class="tag-list">
                     <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
-                        <span class="tag">JS Vanilla</span>
+                        <span class="tag">JS</span>
                     </div>
                 <p class="project-row__text">Un portfolio au un design original, épuré et léger qui démontre mes compétences et ma créativité</p>
                 <a class="project-row__link" href="https://github.com/Inditxtlab" aria-label="Voir le code du projet Mon portfolio">↗</a>
@@ -87,6 +88,17 @@ Contenu et Intégration web : de l’idée à la mise en ligne.
             </li>
         </ol>
     </section>
+    <section id="apropos" class="about">
+        <div class="section-heading">
+                <div class="about-text">
+                      <h2 class="about__title" id="about-title">Je fais le <span class="about__accent">pont</span> entre le contenu et la tech</h2>
+                    <p>Journaliste de formation, je travaille depuis plus de dix ans là où le contenu rencontre le web. Après la rédaction et la communication, je me suis formée au développement web pour comprendre ce qui se passe derrière l'écran. écrire clair, construire propre, rendre accessible.</p>
+                    <a id="mesnotes"class="btn-outline">Mes notes</a>
+                </div>
+             </div>
+        </div>
+    </section>
+</section>
     <div class="resume-layout">
         <section id="parcours" class="resume">
             <div class="section-heading">
@@ -116,7 +128,7 @@ Contenu et Intégration web : de l’idée à la mise en ligne.
                 <span class="timeline__date">2021-2025</span>
                 <h3>France-Novastan</h3>
                 <p>Rédaction web, SEO
-                </p> <p class="timeline__summary">Nouvelles expériences, nouveaux apprentissages, redaction, réinvention</p>
+                </p> <p class="timeline__summary">Nouvelles expériences, nouveaux apprentissages, rédaction, réinvention</p>
             </article>
             <article class="timeline__item"> <span class="timeline__date">2024-2025</span>
                 <h3>Web & développement</h3>
@@ -229,7 +241,7 @@ Contenu et Intégration web : de l’idée à la mise en ligne.
                     <h4 class="commitment__title">Accessibilité</h4>
                     <p class="commitment__text">Des contenus et interfaces utilisables par toutes et tous, sans barrières.</p>
                     <h4 class="commitment__title">La mediation numerique</h4>
-                    <p>Rendre les outils et les usages du web plus accessibles à chacun. Cet engagement rejoint ma volonté de créer un numérique utile et pensé pour les besoins réels.</p>
+                    <p>Rendre les outils et les usages du web plus accessibles à chacun.</p>
                 </div>
         </div>
     </section>
