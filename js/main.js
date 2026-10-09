@@ -29,7 +29,7 @@ const observer = new IntersectionObserver((entries)=>
     timelineItems.forEach((item)=>{
         observer.observe(item); 
     }); 
-
+/*PROJECT CARDS*/
 const projectRows = document.querySelectorAll(".project-row"); 
 const projectObserver = new IntersectionObserver((entries)=>entries.forEach((entry)=>{
     if(entry.isIntersecting){
@@ -44,7 +44,7 @@ projectRows.forEach((row) => {
     projectObserver.observe(row); 
 });
 
-
+/*LEARN AND COMMINTMENT*/
 const cards = document.querySelectorAll(".card-neutral, .card-accent");
 
 const cardObserver = new IntersectionObserver((entries) =>
@@ -53,7 +53,7 @@ const cardObserver = new IntersectionObserver((entries) =>
             const index = [...cards].indexOf(entry.target); 
             entry.target.style.transitionDelay = `${index * 150}ms`;
             entry.target.classList.add("is-visible");
-            cardObserver.unobserve(entry.target); // Solo una vez
+            cardObserver.unobserve(entry.target);
         }
     })
 );
@@ -80,6 +80,7 @@ function hideHeader() {
         header.contains(document.activeElement);
     if (atTop || inUse) return;
     header.classList.add("site-header--hidden");
+}
 window.addEventListener("scroll", hideHeader, { passive: true });
 document.addEventListener("mousemove", (event) => {
     if (event.movementX !== 0 || event.movementY !== 0) showHeader();
@@ -89,13 +90,6 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "Tab") showHeader();
 });
 header.addEventListener("focusin", showHeader);
-}
-
-// Abrir modal al hacer clic en "Mentions légales"
-document.querySelector('.site-footer__legal').addEventListener('click', (e) => {
-    e.preventDefault();
-    document.getElementById('mentions').hidden = false;
-});
 
 /* === MODAL MENTIONS LÉGALES === */
 

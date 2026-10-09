@@ -8,8 +8,6 @@
   --grey: #eaeaea;
   --radius: 10px;
   --shadow: 0 8px 24px rgb(61 43 115 / 0.15);
-  --font-title: "DM Sans", sans-serif;
-  --font-body: "DM Sans", sans-serif;
   --font-main: "Noto Sans", system-ui, sans-serif;
 }
 
@@ -25,7 +23,7 @@ h2 {
 }
 
 h3 {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--violet-900);
 }
 p {
@@ -53,7 +51,7 @@ body {
   margin: 0;
   width: min(100% - 2rem, 70rem);
   margin-inline: auto;
-  font-family: var(--font-body);
+  font-family: var(--font-main);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -166,13 +164,13 @@ html {
 .relief:hover {
   font-style: normal;
   background: linear-gradient(transparent 60%, var(--violet-100) 60%);
-  font-size: larger;
 }
 
 .hero__subtitle {
   font-size: 1rem;
   color: var(--violet-900);
-  padding-bottom: 2rem;
+  padding-bottom: 0;
+  margin: 0;
 }
 .hero__intro {
   display: flex;
@@ -181,10 +179,6 @@ html {
   align-items: center;
   gap: 1rem;
   margin-bottom: 2.5rem;
-}
-.hero__subtitle {
-  padding-bottom: 0;
-  margin: 0;
 }
 
 .btn-primary {
@@ -308,7 +302,7 @@ html {
   background-color: var(--violet-700);
   color: var(--violet-100);
   border: 1px solid var(--violet-500);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
 }
@@ -353,7 +347,7 @@ html {
 }
 .about__title {
   margin-top: 0;
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.5rem, 2.5vw, 1.75rem);
   color: var(--violet-900);
 }
 .about__accent {
@@ -365,8 +359,8 @@ html {
 
 .about-text p {
   margin-top: 0;
-  font-size: 2rem;
-  font-weight: 200;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 .about__link::after {
   content: "→";
@@ -453,7 +447,7 @@ html {
   margin-bottom: 3rem;
 }
 .timeline__summary {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   padding: 0.5rem 0 0;
   color: var(--violet-700);
@@ -471,7 +465,7 @@ html {
   text-align: center;
 }
 .skill__desc {
-  font-size: 0.75rem;
+  font-size: 	0.875rem;
   color: var(--violet-700);
   margin: 0.25rem 0 0;
   line-height: 1.4;
@@ -487,16 +481,13 @@ html {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
+    transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .skill__icon img {
   width: 30px;
   height: 30px;
-}
-
-.skill__icon {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
 }
 .skill:hover .skill__icon {
   transform: translateY(-3px);
@@ -505,7 +496,7 @@ html {
 
 .skill h3 {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 	1rem;
 }
 
 .tools-box {
@@ -521,7 +512,7 @@ html {
 .tool {
   display: flex;
   flex-direction: column;
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   gap: 0.5rem;
   text-align: center;
 }
@@ -611,7 +602,6 @@ html {
 }
 
 .contact__description {
-  font-size: 0.8rem;
   color: var(--violet-900);
   padding-bottom: 2rem;
 }
@@ -624,7 +614,7 @@ html {
 }
 
 .contact__form label {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--violet-900);
   font-weight: bold;
 }
@@ -632,7 +622,7 @@ html {
 .contact__form input,
 .contact__form textarea {
   font: inherit;
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 0.5rem;
   border: 1px solid var(--violet-500);
   border-radius: 8px;
@@ -670,7 +660,6 @@ html {
 
 .social-links__item a {
   text-decoration: none;
-  font-size: 0.8rem;
   gap: 0.6rem;
   transition: opacity 0.2s ease;
   color: var(--violet-900);
@@ -695,12 +684,12 @@ html {
 }
 
 .site-footer__copyright {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: var(--violet-900);
   text-decoration: none;
 }
 .site-footer__top-link {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: var(--violet-900);
   text-decoration: none;
   transition: opacity 0.2s ease;
