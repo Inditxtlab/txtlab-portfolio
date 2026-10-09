@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll(
-        '.site-header, .hero'
+        '.hero'
     );
     
     setTimeout(() => {
@@ -24,6 +24,8 @@ const observer = new IntersectionObserver((entries)=>
 
            entry.target.style.transitionDelay = `${index * 150}ms`;
             entry.target.classList.add("is-visible");
+            entry.target.addEventListener("transitionend", ()=>{
+                entry.target.style.transitionDelay="";}, {once:true});
         }}
     )); 
     timelineItems.forEach((item)=>{
@@ -36,6 +38,8 @@ const projectObserver = new IntersectionObserver((entries)=>entries.forEach((ent
         const index=[...projectRows].indexOf(entry.target); 
         entry.target.style.transitionDelay = `${index * 150}ms`; 
         entry.target.classList.add("is-visible"); 
+          entry.target.addEventListener("transitionend", ()=>{
+                entry.target.style.transitionDelay="";}, {once:true});
         projectObserver.unobserve(entry.target); 
     }
 })
@@ -53,6 +57,8 @@ const cardObserver = new IntersectionObserver((entries) =>
             const index = [...cards].indexOf(entry.target); 
             entry.target.style.transitionDelay = `${index * 150}ms`;
             entry.target.classList.add("is-visible");
+              entry.target.addEventListener("transitionend", ()=>{
+                entry.target.style.transitionDelay="";}, {once:true});
             cardObserver.unobserve(entry.target);
         }
     })
