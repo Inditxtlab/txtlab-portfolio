@@ -82,8 +82,8 @@ function showHeader() {
 function hideHeader() {
     const atTop = window.scrollY < 100;
     const inUse =
-        header.matches(":hover") || 
-        header.contains(document.activeElement);
+    header.matches(":hover") ||
+    header.querySelector(":focus-visible");
     if (atTop || inUse) return;
     header.classList.add("site-header--hidden");
 }
@@ -100,18 +100,18 @@ header.addEventListener("focusin", showHeader);
 /* === MODAL MENTIONS LÉGALES === */
 
 const mentionsModal = document.getElementById('mentions-modal');
-const mentionsLink = document.querySelector('.site-footer__legal');
 const mentionsClose = document.getElementById('mentions-close');
 
 // Abrir modal
-if (mentionsLink) {
-    mentionsLink.addEventListener('click', (e) => {
+document.querySelectorAll("[data-open-mentions]").forEach((link) => {
+    link.addEventListener("click", (e) => {
         e.preventDefault();
         if (mentionsModal) {
             mentionsModal.hidden = false;
+            mentionsClose.focus();
         }
     });
-}
+});
 
 // Cerrar modal con el botón
 if (mentionsClose) {

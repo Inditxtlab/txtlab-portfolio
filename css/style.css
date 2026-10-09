@@ -1,24 +1,27 @@
 @font-face {
-    font-family: "Noto Sans";
-    src: url("../assets/font/noto-sans-v42-latin/noto-sans-v42-latin-regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap; 
+  font-family: "Noto Sans";
+  src: url("../assets/font/noto-sans-v42-latin/noto-sans-v42-latin-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Noto Sans";
-  src: url("../assets/font/noto-sans-v42-latin/noto-sans-v42-latin-600.woff2") format("woff2");
+  src: url("../assets/font/noto-sans-v42-latin/noto-sans-v42-latin-600.woff2")
+    format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-    font-family: "Noto Sans";
-    src: url("../assets/font/noto-sans-v42-latin-italic/noto-sans-v42-latin-italic.woff2") format("woff2");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
+  font-family: "Noto Sans";
+  src: url("../assets/font/noto-sans-v42-latin-italic/noto-sans-v42-latin-italic.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 :root {
   --violet-900: #3d2b73;
@@ -229,8 +232,8 @@ html {
   margin-top: 8rem;
 }
 .project-list {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: grid;
   gap: 1.25rem;
@@ -303,7 +306,7 @@ html {
 }
 .project-row__image {
   width: 100%;
-  height: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 2px solid var(--violet-900);
@@ -450,7 +453,7 @@ html {
   margin-top: 8rem;
 }
 
-.about-title,
+.about__title,
 .project-title,
 .resume-title,
 .skills-title {
@@ -469,13 +472,15 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 1.5rem;
   background-color: var(--bg);
+  border-top: solid 1px var(--violet-500);
 }
 
 .skill {
   text-align: center;
+  margin-top: 1rem;
 }
 .skill__desc {
-  font-size: 	0.875rem;
+  font-size: 0.875rem;
   color: var(--violet-700);
   margin: 0.25rem 0 0;
   line-height: 1.4;
@@ -491,7 +496,7 @@ html {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
-    transition:
+  transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
@@ -506,7 +511,7 @@ html {
 
 .skill h3 {
   margin: 0;
-  font-size: 	1rem;
+  font-size: 1rem;
 }
 
 .tools-box {
@@ -540,6 +545,50 @@ html {
   padding: 0.5rem;
 }
 
+.commitment__title {
+  color: var(--text);
+}
+.commitments__list {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--violet-900);
+}
+.commitment {
+  display: grid;
+  grid-template-columns: 2rem minmax(4rem, 7rem) 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--violet-900);
+}
+.commitment__icon {
+  width: 24px;
+  height: 24px;
+}
+.commitment__title {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text);
+}
+.commitment__text {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+}
+.commitment__proof {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 40rem) {
+  .commitment {
+    grid-template-columns: 2rem 1fr;
+  }
+  .commitment__body {
+    grid-column: 1 / -1;
+  }
+}
+
 .card-neutral,
 .card-accent {
   opacity: 0;
@@ -550,7 +599,7 @@ html {
   padding: 1rem;
   border: 1px solid var(--violet-100);
   border-radius: 1rem;
-  background-color: var(--violet-500);
+  background: var(--violet-500);
 }
 
 .card-neutral {
@@ -636,7 +685,7 @@ html {
   padding: 0.5rem;
   border: 1px solid var(--violet-500);
   border-radius: 8px;
-  background: #ffff;
+  background: #fff;
   color: var(--violet-900);
 }
 
@@ -647,10 +696,19 @@ html {
   cursor: pointer;
   width: fit-content;
   padding: 0.5rem 1rem;
-  border-radius: 15px;
+  border-radius: 999px;
   margin-bottom: 1rem;
 }
-
+.form-notice {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--text);
+}
+.form-notice a {
+  color: var(--violet-700);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 /*SOCIAL MEDIA*/
 
 .social-links {
@@ -714,6 +772,14 @@ html {
   align-items: center;
   gap: 1rem;
 }
+.section-heading .icon {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: var(--violet-100);
+  border-radius: 50%;
+  margin: 0;
+}
 
 .hero {
   opacity: 0;
@@ -727,15 +793,12 @@ html {
   transform: translateY(0);
 }
 
-.site-header.is-visible {
-  transition-delay: 0s;
-}
 .hero.is-visible {
   transition-delay: 0.3s;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero {
+  .hero {
     opacity: 1;
     transform: none;
     transition: none;
@@ -780,4 +843,7 @@ html {
 
 .modal__content strong {
   color: var(--violet-700);
+}
+.modal__content .btn-outline {
+  margin-top: 1rem;
 }
