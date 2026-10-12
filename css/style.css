@@ -162,7 +162,7 @@ html {
   background: transparent;
   color: var(--violet-900);
   border: var(--violet-900) solid 1px;
-  border-radius: 999px;
+  border-radius: 10px 50px 50px;
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition:
@@ -173,7 +173,12 @@ html {
 
 .btn-outline:hover {
   background-color: var(--violet-500);
-  color: var(--violet-900);
+  color: var(--text);
+}
+
+@media (max-width: 55rem) {
+  .site-header { position: static; }
+  .main-nav__list a { padding-block: 0.5rem; }
 }
 
 .hero__title {
@@ -212,7 +217,7 @@ html {
   background: var(--violet-900);
   color: var(--violet-100);
   border: 1px solid var(--violet-900);
-  border-radius: 999px;
+  border-radius: 50px 10px 50px 50px;
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
@@ -325,7 +330,7 @@ html {
   background-color: var(--violet-700);
   color: var(--violet-100);
   border: 1px solid var(--violet-500);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
 }
@@ -380,6 +385,9 @@ html {
   text-underline-offset: 0.2em;
 }
 
+.about-text{
+  max-width: 40rem;
+}
 .about-text p {
   margin-top: 0;
   font-size: 1.5rem;
@@ -545,9 +553,6 @@ html {
   padding: 0.5rem;
 }
 
-.commitment__title {
-  color: var(--text);
-}
 .commitments__list {
   margin: 1.5rem 0 0;
   padding: 0;
@@ -662,14 +667,14 @@ html {
 
 .contact__description {
   color: var(--violet-900);
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 /*FORMULAIRE*/
 .contact__form form {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.5rem;
 }
 
 .contact__form label {
@@ -696,12 +701,12 @@ html {
   cursor: pointer;
   width: fit-content;
   padding: 0.5rem 1rem;
-  border-radius: 999px;
+  border-radius: 50px 10px 50px 50px;
   margin-bottom: 1rem;
 }
 .form-notice {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   color: var(--text);
 }
 .form-notice a {
@@ -770,9 +775,14 @@ html {
 .section-heading {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.25rem;
+}
+.section.heading h2, .section-heading h3{
+  margin: 0;
+  line-height: 1.2;
 }
 .section-heading .icon {
+  box-sizing: border-box;
   width: 44px;
   height: 44px;
   padding: 10px;

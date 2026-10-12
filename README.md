@@ -1,10 +1,7 @@
 Projet : Mon Portfolio
 
 Objetif : 
-Créer un portfolio qui montre avec efficacité mes compétences, mon parcours et mes intérêts.
+Créer un portfolio one-page qui montre avec efficacité mes compétences, mon parcours et mes intérêts.
+
 Technologies : 
-HTML 
-CSS
-JavaScript
-Git
-GitPages
+HTML, CSS, JavaScript, Git et GitHub Pages.
