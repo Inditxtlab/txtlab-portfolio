@@ -351,12 +351,6 @@ html {
   background: var(--violet-500);
 }
 
-.project-row__link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
 @media (max-width: 55rem) {
   .project-row {
     grid-template-columns: 5rem 1fr 3rem;
@@ -383,10 +377,6 @@ html {
   text-decoration-color: var(--violet-500);
   text-decoration-thickness: 4px;
   text-underline-offset: 0.2em;
-}
-
-.about-text{
-  max-width: 40rem;
 }
 .about-text p {
   margin-top: 0;
