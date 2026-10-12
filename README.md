@@ -1,6 +1,6 @@
 Projet : Mon Portfolio
 
-Objetif : 
+Objectif : 
 Créer un portfolio one-page qui montre avec efficacité mes compétences, mon parcours et mes intérêts.
 
 Technologies : 
