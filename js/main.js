@@ -45,6 +45,7 @@ function revealOnScroll(selector, delay = 150) {
 revealOnScroll(".timeline__item");
 revealOnScroll(".project-row");
 revealOnScroll(".card-neutral, .card-accent");
+revealOnScroll(".skill", 80)
 
 /*CHANGEMENT DE DATE */
 const yearElement = document.querySelector("#year");
