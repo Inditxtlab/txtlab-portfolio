@@ -1,17 +1,17 @@
 /* === FADE-IN AL CARGAR === */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const fadeElements = document.querySelectorAll(
-        '.hero'
-    );
-    
-    setTimeout(() => {
-        fadeElements.forEach((el) => {
-            el.classList.add('is-visible');
-        });
-    }, 100);
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeElements = document.querySelectorAll(".hero");
+
+  setTimeout(() => {
+    fadeElements.forEach((el) => {
+      el.classList.add("is-visible");
+    });
+  }, 100);
 });
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 function revealOnScroll(selector, delay = 150) {
   const elements = document.querySelectorAll(selector);
 
@@ -30,7 +30,7 @@ function revealOnScroll(selector, delay = 150) {
           () => {
             entry.target.style.transitionDelay = "";
           },
-          { once: true }
+          { once: true },
         );
       }
 
@@ -47,39 +47,38 @@ revealOnScroll(".project-row");
 revealOnScroll(".card-neutral, .card-accent");
 
 /*CHANGEMENT DE DATE */
-const yearElement = document.querySelector("#year"); 
+const yearElement = document.querySelector("#year");
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-/*  MENU*/ 
-    const header = document.querySelector(".site-header");
-if (header){
-function showHeader() {
+/*  MENU*/
+const header = document.querySelector(".site-header");
+if (header) {
+  function showHeader() {
     header.classList.remove("site-header--hidden");
-}
-
-    function hideHeader() {
-  if (window.matchMedia("(max-width: 55rem), (hover: none)").matches) {
-    showHeader();
-    return;
   }
+
+  function hideHeader() {
+    if (window.matchMedia("(max-width: 55rem), (hover: none)").matches) {
+      showHeader();
+      return;
+    }
     const atTop = window.scrollY < 100;
     const inUse =
-    header.matches(":hover") ||
-    header.querySelector(":focus-visible");
+      header.matches(":hover") || header.querySelector(":focus-visible");
     if (atTop || inUse) return;
     header.classList.add("site-header--hidden");
-}
-window.addEventListener("scroll", hideHeader, { passive: true });
-document.addEventListener("mousemove", (event) => {
+  }
+  window.addEventListener("scroll", hideHeader, { passive: true });
+  document.addEventListener("mousemove", (event) => {
     if (event.movementX !== 0 || event.movementY !== 0) showHeader();
-});
+  });
 
-document.addEventListener("keydown", (event) => {
+  document.addEventListener("keydown", (event) => {
     if (event.key === "Tab") showHeader();
-});
-header.addEventListener("focusin", showHeader);
+  });
+  header.addEventListener("focusin", showHeader);
 }
 
 /* === MODAL MENTIONS LÉGALES === */
@@ -100,7 +99,7 @@ function trapFocus(event) {
   if (event.key !== "Tab") return;
 
   const focusable = mentionsModal.querySelectorAll(
-    'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])'
+    'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])',
   );
 
   if (!focusable.length) return;
@@ -141,3 +140,20 @@ document.addEventListener("keydown", (event) => {
 });
 
 document.addEventListener("keydown", trapFocus);
+
+const scrollProgress = document.querySelector(".scroll-progress");
+
+if (scrollProgress) {
+  const updateProgress = () => {
+    const scrollable =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+
+    scrollProgress.style.transform = `scaleX(${progress})`;
+  };
+
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
+}
