@@ -458,6 +458,7 @@ html {
 .timeline__item h3 {
   margin: 0.2rem 0;
   color: var(--violet-700);
+  font-size: 1rem;
 }
 
 .resume-layout {
@@ -597,6 +598,7 @@ html {
 }
 .commitments-title {
   color: var(--violet-100);
+  font-size: 1.25rem;
 }
 .commitment__title {
   margin: 0;
@@ -790,6 +792,7 @@ html {
 .section-heading h3 {
   margin: 0;
   line-height: 1.2;
+  font-size: 1.25rem;
 }
 .section-heading .icon {
   box-sizing: border-box;
