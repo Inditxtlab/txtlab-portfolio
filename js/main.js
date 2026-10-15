@@ -79,7 +79,11 @@ function showHeader() {
     header.classList.remove("site-header--hidden");
 }
 
-function hideHeader() {
+    function hideHeader() {
+  if (window.matchMedia("(max-width: 55rem), (hover: none)").matches) {
+    showHeader();
+    return;
+  }
     const atTop = window.scrollY < 100;
     const inUse =
     header.matches(":hover") ||
@@ -102,38 +106,33 @@ header.addEventListener("focusin", showHeader);
 const mentionsModal = document.getElementById('mentions-modal');
 const mentionsClose = document.getElementById('mentions-close');
 
-// Abrir modal
+let lastFocused = null;
+
+function closeMentions() {
+  mentionsModal.hidden = true;
+  lastFocused?.focus();
+}
+
 document.querySelectorAll("[data-open-mentions]").forEach((link) => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (mentionsModal) {
-            mentionsModal.hidden = false;
-            mentionsClose.focus();
-        }
-    });
-});
-
-// Cerrar modal con el botón
-if (mentionsClose) {
-    mentionsClose.addEventListener('click', () => {
-        if (mentionsModal) {
-            mentionsModal.hidden = true;
-        }
-    });
-}
-
-// Cerrar modal al hacer clic fuera del contenido
-if (mentionsModal) {
-    mentionsModal.addEventListener('click', (e) => {
-        if (e.target === mentionsModal) {
-            mentionsModal.hidden = true;
-        }
-    });
-}
-
-// Cerrar modal con la tecla Escape
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mentionsModal && !mentionsModal.hidden) {
-        mentionsModal.hidden = true;
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (mentionsModal) {
+      lastFocused = document.activeElement;
+      mentionsModal.hidden = false;
+      mentionsClose.focus();
     }
+  });
 });
+
+mentionsClose?.addEventListener("click", closeMentions);
+
+mentionsModal?.addEventListener("click", (e) => {
+  if (e.target === mentionsModal) closeMentions();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && mentionsModal && !mentionsModal.hidden) {
+    closeMentions();
+  }
+});
+
