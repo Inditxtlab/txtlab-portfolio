@@ -12,6 +12,7 @@
         .hero,
         .project-row,
         .timeline__item,
+        .skill,
         .card-neutral,
         .card-accent {
           opacity: 1 !important;
@@ -45,6 +46,14 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="color-scheme" content="light dark" />
+    <script>
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  } catch (e) {}
+</script>
   </head>
   <body id="body">
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -52,7 +61,7 @@
       <a class="site-header__name" href="#accueil">
         <img
           class="site-header__avatar"
-          src="assets/images/photoprofil.png"
+          src="assets/images/photoprofil.webp"
           alt=""
           width="48"
           height="48"
@@ -68,11 +77,16 @@
           <li>
             <a
               class="btn-outline"
-              href="assets/documents/ramirez-teran-indira.pdf"
+              href="assets/documents/indiraramirezterancv.pdf"
               download
               >Télécharger mon CV</a
             >
           </li>
+          <li>
+  <button id="theme-toggle" class="btn-outline" aria-label="Cambiar tema">
+    🌙
+  </button>
+</li>
         </ul>
       </nav>
     </header>
@@ -82,7 +96,7 @@
           <span class="relief">Bonjour&nbsp;!</span> Je suis
           <span class="relief">Indira</span> et j'aime transformer
           <span class="relief">les idées</span> en
-          <span class="relief">expériences numériques</span> et éditoriales bien
+          <span class="relief">expériences éditoriales</span> bien
           pensées, ainsi qu'en sites web qui se sentent bien dans leur
           peau&nbsp;: <br />
           <span class="relief">utiles, évolutifs et épurés.</span>
@@ -90,6 +104,8 @@
         <div class="hero__intro">
           <p class="hero__subtitle">
             Contenu et intégration web : de l'idée à la mise en ligne.
+            <br>
+            Parce que un site épanoui, c'est un visiteur qui reste.
           </p>
           <div class="btn-block">
             <a class="btn-outline" href="#contact">Me contacter</a>
@@ -113,7 +129,7 @@
           <li class="project-row">
             <img
               class="project-row__image"
-              src="assets/images/indirocracia.webp"
+              src="assets/images/img_project.webp"
               alt="Page d'accueil d'Indirocracia"
               width="320"
               height="240"
@@ -147,7 +163,7 @@
               height="240"
               loading="lazy"
             />
-            <h3 class="project-row__title">Mon portfolio</h3>
+            <h3 class="project-row__title project-row__title--contrast">Mon portfolio</h3>
 
             <div class="tag-list">
               <span class="tag">HTML</span>
@@ -179,7 +195,7 @@
             />
             <h3 class="project-row__title">Periplia</h3>
             <div class="tag-list">
-              <span class="tag">Frontend</span><span class="tag">Backend</span>
+              <span class="tag">React</span><span class="tag">Laravel</span>
             </div>
             <p class="project-row__text">
               Application fullstack de gestion de voyages en groupe.
@@ -394,7 +410,7 @@
                       sans barrières.
                     </p>
                     <p class="commitment__proof">
-                      <strong> Sur ce site :</strong> navigation au clavier,
+                      <strong>Sur ce site :</strong> navigation au clavier,
                       focus visible, animations réduites sur demande.
                     </p>
                   </div>

@@ -158,3 +158,29 @@ if (scrollProgress) {
   window.addEventListener("resize", updateProgress);
   updateProgress();
 }
+
+/*
+   LOGIQUE DU BOUTON MODE SOMBRE / CLAIR */
+
+const themeToggleBtn = document.getElementById("theme-toggle");
+if (themeToggleBtn) {
+  const root = document.documentElement;
+  const render = () => {
+    const dark = root.dataset.theme === "dark";
+    themeToggleBtn.textContent = dark ? "☀️" : "🌙";
+    themeToggleBtn.setAttribute(
+      "aria-label",
+      dark ? "Passer au mode clair" : "Passer au mode sombre",
+    );
+  };
+  render();
+  themeToggleBtn.addEventListener("click", () => {
+    const dark = root.dataset.theme === "dark";
+    if (dark) delete root.dataset.theme;
+    else root.dataset.theme = "dark";
+    try {
+      localStorage.setItem("theme", dark ? "light" : "dark");
+    } catch (e) {}
+    render();
+  });
+}

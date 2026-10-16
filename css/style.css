@@ -35,7 +35,8 @@
   --shadow: 0 8px 24px rgb(61 43 115 / 0.15);
   --font-main: "Noto Sans", system-ui, sans-serif;
 }
-
+:root { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
 *,
 *::before,
 *::after {
@@ -911,116 +912,79 @@ html {
 .modal__content .btn-outline {
   margin-top: 1rem;
 }
+/* ==========================================================================
+   GESTION DU MODE SOMBRE MANUEL ([data-theme="dark"])
+   ========================================================================== */
 
-/*DARK MODE*/
-:root {
-  color-scheme: light dark;
+/* Styles appliqués quand le mode sombre est activé manuellement */
+[data-theme="dark"] {
+  --bg: #14111f;
+  --text: #f6f5f5;
+  --heading: #d9ccff;
+  --accent: #b9a7f7;
+  --surface: #221b38;
+  --surface-neutral: #1d1830;
+  --line: #4a3f80;
+  --on-accent: #17132a;
+}
+
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] .about__title,
+[data-theme="dark"] .site-header__brand,
+[data-theme="dark"] .main-nav__list a,
+[data-theme="dark"] .hero__subtitle,
+[data-theme="dark"] .site-footer__copyright,
+[data-theme="dark"] .site-footer__top-link,
+[data-theme="dark"] .social-links__item a,
+[data-theme="dark"] .btn-outline {
+  color: var(--heading);
+  border-color: var(--line);
+}
+
+[data-theme="dark"] .project-row__title--contrast {
+   font-size: 1rem;
+   color: var(--violet-900);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14111f;
-    --text: #f6f5f5;
-    --heading: #d9ccff;
-    --accent: #b9a7f7;
-    --surface: #221b38;
-    --surface-neutral: #1d1830;
-    --line: #4a3f80;
-    --on-accent: #17132a;
-    --shadow: 0 8px 24px rgb(0 0 0 / 0.45);
+  .project-row__title--contrast {
+    color: var(--violet-900) !important;
   }
+}
 
-  /*TITLES*/
-  h2,
-  h3,
-  .about__title,
-  .site-header__brand,
-  .main-nav__list a,
-  .hero__subtitle,
-  .site-footer__copyright,
-  .site-footer__top-link,
-  .social-links__item a,
-  .btn-outline {
-    color: var(--heading);
-  }
+[data-theme="dark"] .relief {
+  color: var(--accent);
+}
 
-  /* TEXT -700 */
-  .relief,
-  .timeline__date,
-  .timeline__item h3,
-  .timeline__summary,
-  .skill__desc,
-  .modal__content strong {
-    color: var(--accent);
-  }
+[data-theme="dark"] .btn-primary {
+  background: var(--violet-500);
+  border-color: var(--violet-500);
+  color: var(--on-accent);
+}
 
-  .relief:hover {
-    background: linear-gradient(transparent 60%, #3d2b73 60%);
-  }
+[data-theme="dark"] .btn-primary:hover {
+  background: var(--accent);
+}
 
-  .timeline__item:hover::before {
-    background-color: var(--heading);
-  }
+[data-theme="dark"] .card-neutral,
+[data-theme="dark"] .contact {
+  background: var(--surface-neutral);
+  border-color: var(--line);
+}
 
-  a:focus-visible,
-  button:focus-visible {
-    outline-color: var(--heading);
-  }
+[data-theme="dark"] .timeline__date,
+[data-theme="dark"] .timeline__summary,
+[data-theme="dark"] .skill__desc,
+[data-theme="dark"] .modal__content strong {
+  color: var(--accent);
+}
 
-  /* CTA */
-  .btn-outline {
-    border-color: var(--heading);
-  }
-  .btn-outline:hover {
-    color: var(--on-accent);
-  }
-  .btn-primary {
-    background: var(--violet-500);
-    border-color: var(--violet-500);
-    color: var(--on-accent);
-  }
-  .btn-primary:hover {
-    background: var(--accent);
-  }
-
-  /* PROJECTS */
-  .project-row {
-    background: var(--surface);
-    color: var(--heading);
-    border-color: var(--line);
-  }
-  .project-row__image {
-    background: var(--surface);
-    border-color: var(--line);
-  }
-  .project-row__link {
-    background: var(--surface-neutral);
-    color: var(--heading);
-    border-color: var(--line);
-  }
-  .project-row:hover .project-row__link {
-    background: var(--violet-500);
-    color: var(--on-accent);
-  }
-
-  /* CARDS AND CONTACT */
-  .card-neutral,
-  .contact {
-    background: var(--surface-neutral);
-    border-color: var(--line);
-  }
-  .contact__logo::before {
-    background: radial-gradient(
-      circle,
-      rgb(165 143 242 / 0.35) 0%,
-      transparent 70%
-    );
-  }
-
-  /* BLACK ICONS*/
-  .social-links__item .icon,
-  .tool img,
-  .site-footer__top-link .icon {
-    filter: invert(1);
-  }
+[data-theme="dark"] .btn-outline:hover {
+  color: var(--on-accent);
+}
+[data-theme="dark"] .social-links__item .icon,
+[data-theme="dark"] .tool img,
+[data-theme="dark"] .site-footer__top-link .icon {
+  filter: invert(1);
 }
