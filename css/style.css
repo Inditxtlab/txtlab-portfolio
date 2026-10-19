@@ -242,9 +242,9 @@ html {
   background: linear-gradient(transparent 60%, var(--violet-100) 60%);
 }
 
-.relief___sub {
+.relief__sub {
   font-style: normal;
-  color: var(--violet-700);
+  color: var(--violet-900);
 }
 .relief__sub:hover {
   background: linear-gradient(transparent 60%, var(--violet-100) 60%);
@@ -872,7 +872,7 @@ html {
 }
 
 
-/* Style de base des bulles de compétences */
+/*bulles de compétences */
 .skill-tag {
   position: absolute;
   padding: 6px 12px;
@@ -1087,7 +1087,7 @@ html {
   }
 }
 
-[data-theme="dark"] .relief {
+[data-theme="dark"] .relief{
   color: var(--accent);
 }
 

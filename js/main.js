@@ -175,15 +175,15 @@ function update() {
   const total = rect.height - vh + lead;
   const p = clamp((lead - rect.top) / total);
 
-  // Texto: aparece elemento por elemento
+  // Texto
   textItems.forEach((el, i) => {
     const t = clamp((p - i * 0.08) / 0.12);
     el.style.opacity = t;
     el.style.transform = `translateY(${(1 - t) * 24}px)`;
   });
 
-  // Foto: entra después del texto
-  const m = clamp((p - 0.35) / 0.4);
+  // Foto
+  const m = clamp((p - 0.30) / 0.4);
   media.style.opacity = m;
   media.style.transform = `translateX(${(1 - m) * 100}px)`;
 }
