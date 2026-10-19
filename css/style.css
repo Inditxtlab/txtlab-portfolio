@@ -35,8 +35,12 @@
   --shadow: 0 8px 24px rgb(61 43 115 / 0.15);
   --font-main: "Noto Sans", system-ui, sans-serif;
 }
-:root { color-scheme: light; }
-[data-theme="dark"] { color-scheme: dark; }
+:root {
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+}
 *,
 *::before,
 *::after {
@@ -197,7 +201,7 @@ html {
   border-radius: 10px 50px 50px;
   padding: 0.5rem 1rem;
   cursor: pointer;
-   transition:
+  transition:
     transform 0.25s ease,
     background-color 0.25s ease,
     color 0.25s ease;
@@ -238,6 +242,14 @@ html {
   background: linear-gradient(transparent 60%, var(--violet-100) 60%);
 }
 
+.relief___sub {
+  font-style: normal;
+  color: var(--violet-700);
+}
+.relief__sub:hover {
+  background: linear-gradient(transparent 60%, var(--violet-100) 60%);
+}
+
 .hero__subtitle {
   font-size: 1rem;
   color: var(--violet-900);
@@ -261,7 +273,7 @@ html {
   border: 1px solid var(--violet-900);
   border-radius: 50px 10px 50px 50px;
   text-decoration: none;
-   transition:
+  transition:
     transform 0.25s ease,
     background-color 0.25s ease,
     color 0.25s ease;
@@ -336,7 +348,7 @@ html {
 }
 .project-row__image {
   grid-area: image;
-    width: 100%;
+  width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: contain;
@@ -419,25 +431,81 @@ html {
 }
 
 /*SECTION A PROPOS*/
-
 .about {
   margin-top: 8rem;
+  height: 200vh;          /* recorrido de scroll */
+  position: relative;
+  /* IMPORTANTE: sin display:flex aquí */
 }
+
+.about__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 5vw;
+  box-sizing: border-box;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 560px;
+}
+
 .about__title {
   margin-top: 0;
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
   color: var(--violet-900);
 }
+
 .about__accent {
   text-decoration: underline;
   text-decoration-color: var(--violet-500);
   text-decoration-thickness: 4px;
   text-underline-offset: 0.2em;
 }
+
 .about-text p {
   margin-top: 0;
-  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  line-height: 1.5;
   font-weight: 400;
+}
+
+.about .tag {
+  display: inline-block;  /* necesario para que funcione el transform */
+}
+
+.about__media img {
+  display: block;
+  max-height: 65vh;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* Estado inicial: solo se oculta si JS está activo */
+.js .about-text > *,
+.js .about__media {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .about__sticky {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .about__media img {
+    max-height: 60vh;
+  }
 }
 /* SECTION PARCOURS */
 
@@ -529,7 +597,7 @@ html {
 .skill {
   text-align: center;
   margin-top: 1rem;
-   opacity: 0;
+  opacity: 0;
   transform: translateY(16px);
   transition:
     opacity 0.5s ease,
@@ -723,7 +791,7 @@ html {
   border: var(--violet-100) solid 1px;
   padding: 2rem 1.5rem;
   border-radius: 10px;
-  gap: 2rem;
+  gap: 4rem;
   margin-top: 6rem;
 }
 .contact__title {
@@ -779,6 +847,72 @@ html {
     justify-self: center;
   }
 }
+
+/* Conteneur principal */
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.main-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+.logo-wrapper:hover .main-logo {
+  animation: logo-bounce 0.7s ease-out;
+}
+@keyframes logo-bounce {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.12, 0.88); }
+  50%  { transform: scale(0.94, 1.08) translateY(-8px); }
+  75%  { transform: scale(1.04, 0.97); }
+  100% { transform: scale(1); }
+}
+
+
+/* Style de base des bulles de compétences */
+.skill-tag {
+  position: absolute;
+  padding: 6px 12px;
+  color: #1a1a1a;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  pointer-events: none; /* Évite que la bulle ne gêne le survol */
+  
+  /* État caché par défaut */
+  opacity: 0;
+  transform: scale(0) translate(0, 0);
+  
+  /* Transition avec l'effet de REBOND (cubic-bezier) */
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+              opacity 0.3s ease;
+}
+
+/* Positionnement individuel autour du logo */
+.tag-1 { top: -10px; right: -10px; }
+.tag-2 { top: -30px;  right: 40px; }
+.tag-3 { bottom: 10px; right: 110px; }
+.tag-4 { bottom: -20px; left: 30px; }
+.tag-5 { top: 30px;  left: -35px; }
+.tag-6{top:30px; left: 130px;}
+
+/* --- ÉTAT AU SURVOL (HOVER) --- */
+.logo-wrapper:hover .skill-tag {
+  opacity: 1;
+  transform: scale(1); /* Déclenche le rebond */
+}
+
+/* Optionnel : Décalage d'apparition pour un effet en cascade */
+.logo-wrapper:hover .tag-1 { transition-delay: 0.05s; }
+.logo-wrapper:hover .tag-2 { transition-delay: 0.10s; }
+.logo-wrapper:hover .tag-3 { transition-delay: 0.10s; }
+.logo-wrapper:hover .tag-4 { transition-delay: 0.05s; }
+.logo-wrapper:hover .tag-5 { transition-delay: 0.15s; }
 /*SOCIAL MEDIA*/
 
 .social-links {
@@ -912,9 +1046,9 @@ html {
 .modal__content .btn-outline {
   margin-top: 1rem;
 }
-/* ==========================================================================
+/* ====
    GESTION DU MODE SOMBRE MANUEL ([data-theme="dark"])
-   ========================================================================== */
+   ===== */
 
 /* Styles appliqués quand le mode sombre est activé manuellement */
 [data-theme="dark"] {
@@ -943,8 +1077,8 @@ html {
 }
 
 [data-theme="dark"] .project-row__title--contrast {
-   font-size: 1rem;
-   color: var(--violet-900);
+  font-size: 1rem;
+  color: var(--violet-900);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -988,3 +1122,5 @@ html {
 [data-theme="dark"] .site-footer__top-link .icon {
   filter: invert(1);
 }
+
+

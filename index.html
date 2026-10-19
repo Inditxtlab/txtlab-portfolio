@@ -47,13 +47,16 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="color-scheme" content="light dark" />
     <script>
-  try {
-    var t = localStorage.getItem("theme");
-    if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-  } catch (e) {}
-</script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (
+          t === "dark" ||
+          (!t && matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body id="body">
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -83,10 +86,14 @@
             >
           </li>
           <li>
-  <button id="theme-toggle" class="btn-outline" aria-label="Cambiar tema">
-    🌙
-  </button>
-</li>
+            <button
+              id="theme-toggle"
+              class="btn-outline"
+              aria-label="Cambiar tema"
+            >
+              🌙
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -96,17 +103,16 @@
           <span class="relief">Bonjour&nbsp;!</span> Je suis
           <span class="relief">Indira</span> et j'aime transformer
           <span class="relief">les idées</span> en
-          <span class="relief">expériences éditoriales</span> bien
-          pensées, ainsi qu'en sites web qui se sentent bien dans leur
-          peau&nbsp;: <br />
+          <span class="relief">expériences éditoriales</span> bien pensées,
+          ainsi qu'en sites web qui se sentent bien dans leur peau&nbsp;: <br />
           <span class="relief">utiles, évolutifs et épurés.</span>
         </h1>
         <div class="hero__intro">
-          <p class="hero__subtitle">
-            Contenu et intégration web : de l'idée à la mise en ligne.
-            <br>
-            Parce que un site épanoui, c'est un visiteur qui reste.
+            <span class="relief__sub">Parce que un site épanoui, c'est un visiteur qui reste.</span>
           </p>
+          <br/>
+           <p class="hero__subtitle">
+            Contenu et intégration web : de l'idée à la mise en ligne.
           <div class="btn-block">
             <a class="btn-outline" href="#contact">Me contacter</a>
             <a
@@ -138,11 +144,10 @@
             <h3 class="project-row__title">Indirocracia</h3>
             <div class="tag-list">
               <span class="tag">WordPress</span> <span class="tag">Contenu</span
-              ><span class="tag">Narratif</span>
+              ><span class="tag">Narration</span>
             </div>
             <p class="project-row__text">
-              Refonte du site Indirocracia, journal d'expérimentation narrative
-              en ligne depuis 2014
+             Un espace éditorial personnel autour de l’écriture et des récits. Une refonte en cours pour repenser la rencontre entre les textes, les images et les formes de narration sur le web.
             </p>
             <a
               class="project-row__link"
@@ -163,7 +168,9 @@
               height="240"
               loading="lazy"
             />
-            <h3 class="project-row__title project-row__title--contrast">Mon portfolio</h3>
+            <h3 class="project-row__title project-row__title--contrast">
+              Mon portfolio
+            </h3>
 
             <div class="tag-list">
               <span class="tag">HTML</span>
@@ -187,7 +194,7 @@
           <li class="project-row">
             <img
               class="project-row__image"
-              src="assets/images/periplialogo.JPG"
+              src="assets/images/periplia.webp"
               alt="Projet fullstack : Periplia, gestion de voyages en groupe"
               width="320"
               height="240"
@@ -198,7 +205,7 @@
               <span class="tag">React</span><span class="tag">Laravel</span>
             </div>
             <p class="project-row__text">
-              Application fullstack de gestion de voyages en groupe.
+              Application fullstack de gestion de voyages en groupe. Projet fin de formation DWWM.
             </p>
             <a
               class="project-row__link"
@@ -212,31 +219,40 @@
           </li>
         </ol>
       </section>
-      <section id="apropos" class="about">
-        <div class="about-text">
-          <h2 class="about__title" id="about-title">
-            Je fais le <span class="about__accent">pont</span> entre le contenu
-            et la tech
-          </h2>
-          <p>
-            De formation journaliste, après la rédaction et la communication, je
-            me suis formée au développement web pour comprendre ce qui se passe
-            derrière l'écran. Aujourd'hui, je m'occupe de tout ce qui vit en
-            ligne dans votre projet : texte, pages, calendrier, publication.
-          </p>
-          <p>Bref, écrire clair, construire propre, rendre accessible.</p>
-          <p>
-            L'espagnol est ma langue maternelle, je rédige et travaille aussi en
-            français et j'ai une compréhension professionnelle de l'anglais.
-          </p>
-          <span class="tag">Disponible en CDI, CDD ou en freelance</span>
-        </div>
-      </section>
+<section id="apropos" class="about" aria-labelledby="about-title">
+  <div class="about__sticky">
+    <div class="about-text">
+      <h2 class="about__title" id="about-title">
+        Je fais le <span class="about__accent">pont</span> entre le contenu
+        et la tech
+      </h2>
+      <p>
+        De formation journaliste, après la rédaction et la communication, je
+        me suis formée au développement web pour comprendre ce qui se passe
+        derrière l'écran. Aujourd'hui, je m'occupe de tout ce qui vit en
+        ligne dans votre projet : texte, pages, calendrier, publication.
+      </p>
+      <p>Bref, écrire clair, construire propre, rendre accessible.</p>
+      <p>
+        L'espagnol est ma langue maternelle, je rédige et travaille aussi en
+        français et j'ai une compréhension professionnelle de l'anglais.
+      </p>
+      <span class="tag">Disponible en CDI, CDD ou en freelance</span>
+    </div>
+
+    <div class="about__media">
+      <img
+        src="assets/images/FigJam basics (2).webp"
+        alt="Indira Ramírez Terán"
+      />
+    </div>
+  </div>
+</section>
       <div class="resume-layout">
         <section id="parcours" class="resume">
           <div class="section-heading">
             <img class="icon" src="assets/icons/path-thin.svg" alt="" />
-            <h2 class="resume-title">Mes détours</h2>
+            <h2 class="resume-title">Mon Parcours</h2>
           </div>
           <div class="timeline">
             <article class="timeline__item">
@@ -442,22 +458,24 @@
         <div class="contact__intro">
           <h2 class="contact__title">Écrivons la suite</h2>
           <p class="contact__description">
-            Par déformation professionnelle, je suis allergique au flou et fan
-            des deadlines (si, si). Si vous avez une idée, un brief ou juste un
-            début de piste, envoyez-moi un message.
+            Par déformation professionnelle, je suis fan
+            des deadlines (si, si). Si vous avez une idée en tête même floue, elle peut être un bon début, alors, envoyez-moi un message.
           </p>
         </div>
-        <div class="contact__logo">
-          <img
-            class="contact__logo-img"
-            src="assets/images/logo3d.webp"
-            alt=""
-            width="200"
-            height="200"
-          />
-        </div>
+        <div class="logo-wrapper">
+  <!-- Ton logo -->
+  <img src="assets/images/logo3d.webp" alt="Indira Ramirez" class="main-logo" />
+
+  <!-- Les bulles de compétences -->
+  <div class="skill-tag tag-1">😀</div>
+  <div class="skill-tag tag-2">✨</div>
+  <div class="skill-tag tag-3">🧶</div>
+  <div class="skill-tag tag-4">📚</div>
+  <div class="skill-tag tag-5">🌞</div>
+  <div class="skill-tag tag-6">✍🏽</div>
+</div>
         <ul class="contact__links social-links">
-            <li class="social-links__item">
+          <li class="social-links__item">
             <img class="icon" src="assets/icons/envelope-thin.svg" alt="" /><a
               href="mailto:indirramirez@gmail.com"
               >indirramirez@gmail.com</a

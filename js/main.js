@@ -1,4 +1,4 @@
-/* === FADE-IN AL CARGAR === */
+/* FADE-IN AL CARGAR */
 
 document.addEventListener("DOMContentLoaded", () => {
   const fadeElements = document.querySelectorAll(".hero");
@@ -45,7 +45,7 @@ function revealOnScroll(selector, delay = 150) {
 revealOnScroll(".timeline__item");
 revealOnScroll(".project-row");
 revealOnScroll(".card-neutral, .card-accent");
-revealOnScroll(".skill", 80)
+revealOnScroll(".skill", 80);
 
 /*CHANGEMENT DE DATE */
 const yearElement = document.querySelector("#year");
@@ -82,7 +82,7 @@ if (header) {
   header.addEventListener("focusin", showHeader);
 }
 
-/* === MODAL MENTIONS LÉGALES === */
+/*MODAL MENTIONS LÉGALES */
 const mentionsModal = document.getElementById("mentions-modal");
 const mentionsClose = document.getElementById("mentions-close");
 
@@ -159,6 +159,55 @@ if (scrollProgress) {
   updateProgress();
 }
 
+/* scroll a propos*/
+document.documentElement.classList.add("js");
+
+const section = document.querySelector(".about");
+const textItems = [...section.querySelectorAll(".about-text > *")];
+const media = section.querySelector(".about__media");
+
+const clamp = (v, min = 0, max = 1) => Math.min(max, Math.max(min, v));
+
+function update() {
+  const rect = section.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const lead = vh * 0.3;
+  const total = rect.height - vh + lead;
+  const p = clamp((lead - rect.top) / total);
+
+  // Texto: aparece elemento por elemento
+  textItems.forEach((el, i) => {
+    const t = clamp((p - i * 0.08) / 0.12);
+    el.style.opacity = t;
+    el.style.transform = `translateY(${(1 - t) * 24}px)`;
+  });
+
+  // Foto: entra después del texto
+  const m = clamp((p - 0.35) / 0.4);
+  media.style.opacity = m;
+  media.style.transform = `translateX(${(1 - m) * 100}px)`;
+}
+
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  [...textItems, media].forEach((el) => (el.style.opacity = 1));
+} else {
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          update();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", update);
+  update();
+}
 /*
    LOGIQUE DU BOUTON MODE SOMBRE / CLAIR */
 
