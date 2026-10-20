@@ -1,3 +1,4 @@
+
 /* FADE-IN AL CARGAR */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,7 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
       el.classList.add("is-visible");
     });
   }, 100);
+
+  const timeline = document.querySelector(".timeline");
+
+if (timeline) {
+  const timelineObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          timeline.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  timelineObserver.observe(timeline);
+}
 });
+
+
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
@@ -18,12 +41,14 @@ function revealOnScroll(selector, delay = 150) {
   if (!elements.length) return;
 
   const observer = new IntersectionObserver((entries) => {
+
+    let batchIndex = 0; 
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
 
       if (!prefersReducedMotion) {
-        const index = [...elements].indexOf(entry.target);
-        entry.target.style.transitionDelay = `${index * delay}ms`;
+        entry.target.style.transitionDelay = `${batchIndex * delay}ms`;
+        batchIndex += 1;
 
         entry.target.addEventListener(
           "transitionend",
@@ -40,6 +65,26 @@ function revealOnScroll(selector, delay = 150) {
   });
 
   elements.forEach((element) => observer.observe(element));
+
+  const timeline = document.querySelector(".timeline");
+
+if (timeline) {
+  const timelineObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          timeline.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  timelineObserver.observe(timeline);
+}
 }
 
 revealOnScroll(".timeline__item");
@@ -160,54 +205,84 @@ if (scrollProgress) {
 }
 
 /* scroll a propos*/
-document.documentElement.classList.add("js");
 
 const section = document.querySelector(".about");
-const textItems = [...section.querySelectorAll(".about-text > *")];
-const media = section.querySelector(".about__media");
 
-const clamp = (v, min = 0, max = 1) => Math.min(max, Math.max(min, v));
+if (section) {
+  const textItems = [
+    ...section.querySelectorAll(".about-text > *"),
+  ];
+  const media = section.querySelector(".about__media");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
 
-function update() {
-  const rect = section.getBoundingClientRect();
-  const vh = window.innerHeight;
-  const lead = vh * 0.3;
-  const total = rect.height - vh + lead;
-  const p = clamp((lead - rect.top) / total);
+  const clamp = (value, min = 0, max = 1) =>
+    Math.min(max, Math.max(min, value));
 
-  // Texto
-  textItems.forEach((el, i) => {
-    const t = clamp((p - i * 0.08) / 0.12);
-    el.style.opacity = t;
-    el.style.transform = `translateY(${(1 - t) * 24}px)`;
-  });
+  function showAll() {
+    [...textItems, media].filter(Boolean).forEach((el) => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    });
+  }
 
-  // Foto
-  const m = clamp((p - 0.30) / 0.4);
-  media.style.opacity = m;
-  media.style.transform = `translateX(${(1 - m) * 100}px)`;
-}
+  if (!media || reduceMotion.matches) {
+    showAll();
+  } else {
+    document.documentElement.classList.add("js");
 
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  [...textItems, media].forEach((el) => (el.style.opacity = 1));
-} else {
-  let ticking = false;
-  window.addEventListener(
-    "scroll",
-    () => {
+    let ticking = false;
+
+    function updateAbout() {
+      const rect = section.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const lead = vh * 0.3;
+      const total = Math.max(1, rect.height - vh + lead);
+      const progress = clamp((lead - rect.top) / total);
+
+      textItems.forEach((el, index) => {
+        const progressItem = clamp(
+          (progress - index * 0.08) / 0.14
+        );
+
+        el.style.opacity = progressItem;
+        el.style.transform =
+          `translateY(${(1 - progressItem) * 16}px)`;
+      });
+
+      const photoProgress = clamp((progress - 0.3) / 0.4);
+
+      media.style.opacity = photoProgress;
+      media.style.transform =
+        `translateX(${(1 - photoProgress) * 28}px)`;
+
+      ticking = false;
+    }
+
+    function requestUpdate() {
       if (!ticking) {
-        requestAnimationFrame(() => {
-          update();
-          ticking = false;
-        });
+        requestAnimationFrame(updateAbout);
         ticking = true;
       }
-    },
-    { passive: true }
-  );
-  window.addEventListener("resize", update);
-  update();
+    }
+
+    window.addEventListener("scroll", requestUpdate, {
+      passive: true,
+    });
+    window.addEventListener("resize", requestUpdate);
+    updateAbout();
+
+    reduceMotion.addEventListener("change", (event) => {
+      if (event.matches) {
+        showAll();
+      } else {
+        requestUpdate();
+      }
+    });
+  }
 }
+
 /*
    LOGIQUE DU BOUTON MODE SOMBRE / CLAIR */
 
