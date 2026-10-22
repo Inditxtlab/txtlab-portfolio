@@ -5,29 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Indira Ramirez Teran — rédactrice web, SEO et intégration web. Contenu, communication digitale et sites accesibles, en français et espagnol"
+      content="Indira Ramírez Terán — rédactrice web, SEO et intégration web. Contenu, communication digitale et sites accessibles, en français et espagnol."
     />
-    <noscript
-      ><style>
-        .hero,
-        .about,
-        .project-row,
-        .timeline__item,
-        .skill,
-        .card-neutral,
-        .card-accent {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-      </style></noscript
-    >
     <link
       rel="canonical"
       href="https://indiramirez.fr/"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Indira Ramirez Teran" />
-    <meta property="og:title" content="Indira Ramirez Teran - Portfolio" />
+    <meta property="og:site_name" content="Indira Ramírez Terán" />
+    <meta property="og:title" content="Indira Ramírez Terán - Portfolio" />
     <meta
       property="og:description"
       content="Contenu et intégration web, de l'idée à la mise en ligne"
@@ -38,6 +24,7 @@
     <title>Indira Ramírez Terán — Contenu web, SEO et intégration</title>
     <link rel="icon" href="assets/images/favicon.png" type="image/png" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preload" href="assets/font/instrument-serif/instrument-serif-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
     <meta
       property="og:image"
       content="https://indiramirez.fr/assets/images/og-image.png"
@@ -46,8 +33,7 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:locale" content="fr_FR"/>
-    <meta name="twitter:title" content="Indira Ramirez Teran -Portfolio"/>
-    <meta name="description" content="Contenu et intégration web, de l'idée à la mise en ligne"/>
+    <meta name="twitter:title" content="Indira Ramírez Terán - Portfolio" />
     <meta name="color-scheme" content="light dark" />
     <script type="application/ld+json">
       {
@@ -63,6 +49,7 @@
       }
     </script>
     <script>
+      document.documentElement.classList.add("js");
       try {
         var t = localStorage.getItem("theme");
         if (
@@ -115,23 +102,17 @@
     </header>
     <main>
       <section class="hero">
-        <br>
-          <span class="tag">Communication digitale &amp; intégration web</span>
-    </div>
-
+        <span class="tag">Communication digitale &amp; intégration web</span>
         <h1 class="hero__title">
-          <span class="relief">Bonjour&nbsp;!</span> Je suis
-          <span class="relief">Indira</span> et j'aime transformer
-          <span class="relief">les idées</span> en
-          <span class="relief">expériences éditoriales</span> bien pensées,
-          ainsi qu'en sites web qui se sentent bien dans leur peau&nbsp;: <br />
-          <span class="relief">utiles, évolutifs et épurés.</span>
-        </h1>
+  <span class="hero__name"><span class="relief">Bonjour&nbsp;!</span> Je suis
+  <span class="relief">Indira</span></span><span class="hero__rest"> et j'aime transformer
+  <span class="relief">les idées</span> en
+  <span class="relief">expériences éditoriales</span> bien pensées,
+  ainsi qu'en sites web qui se sentent bien dans leur peau&nbsp;: <br />
+  <span class="relief">utiles, évolutifs et épurés.</span></span>
+</h1>
         <div class="hero__intro">
           <div class="hero__texts">
-            <p class="hero__lead">
-            <span class="relief__sub">Parce qu'un site épanoui, c'est un visiteur qui reste.</span>
-          </p>
            <p class="hero__subtitle">
             Contenu et intégration web : de l'idée à la mise en ligne.</p>
            </div>
@@ -472,6 +453,12 @@
           </div>
         </section>
       </div>
+      <section class="closing" aria-label="Conviction">
+  <p class="closing__quote">
+    Parce qu'un site épanoui, c'est
+    <em class="relief">un visiteur qui reste.</em>
+  </p>
+</section>
       <section id="contact" class="contact">
         <div class="contact__intro">
           <h2 class="contact__title">Écrivons la suite</h2>
@@ -480,7 +467,7 @@
           </p>
         </div>
    <div class="logo-wrapper">
-  <img src="assets/images/logo3d.webp" alt="Indira Ramirez" class="main-logo" />
+  <img src="assets/images/logo3d.webp" alt="Indira Ramírez Terán" class="main-logo" />
   <div class="skill-tag tag-1">😀</div>
   <div class="skill-tag tag-2">✨</div>
   <div class="skill-tag tag-3">🧶</div>
@@ -524,7 +511,7 @@
     </main>
     <footer class="site-footer">
       <p class="site-footer__copyright">
-        © Indira Ramirez Teran | <span id="year">2026</span>
+        © Indira Ramírez Terán | <span id="year">2026</span>
       </p>
       <a
         class="site-footer__copyright site-footer__legal"
@@ -560,6 +547,12 @@
         </p>
         <p>
           <strong>Cookies :</strong> Ce site n'utilise pas de cookies de suivi.
+        </p>
+        <p>
+          <strong>Stockage local :</strong> le bouton de mode sombre enregistre
+          votre préférence d'affichage (clair ou sombre) dans le stockage local
+          de votre navigateur. Cette information reste sur votre appareil, n'est
+          jamais transmise et ne sert à aucun suivi.
         </p>
         <button id="mentions-close" class="btn-outline">Fermer</button>
       </div>

@@ -1,4 +1,3 @@
-
 /* FADE-IN AL CARGAR */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -230,7 +229,6 @@ if (section) {
   if (!media || reduceMotion.matches) {
     showAll();
   } else {
-    document.documentElement.classList.add("js");
 
     let ticking = false;
 
