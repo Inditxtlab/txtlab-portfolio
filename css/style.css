@@ -26,14 +26,16 @@
 
 @font-face {
   font-family: "Instrument Serif";
-  src: url("../assets/font/instrument-serif/instrument-serif-latin-regular.woff2") format("woff2");
+  src: url("../assets/font/instrument-serif/instrument-serif-latin-regular.woff2")
+    format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Instrument Serif";
-  src: url("../assets/font/instrument-serif/instrument-serif-latin-italic.woff2") format("woff2");
+  src: url("../assets/font/instrument-serif/instrument-serif-latin-italic.woff2")
+    format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -49,8 +51,8 @@
   --radius: 10px;
   --shadow: 0 8px 24px rgb(61 43 115 / 0.15);
   --font-main: "Noto Sans", system-ui, sans-serif;
-}
-:root {
+  --coral-500: #ff916b;
+  --coral-300: #ffc0a8;
   color-scheme: light;
 }
 [data-theme="dark"] {
@@ -118,7 +120,7 @@ body {
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--violet-500);
+  background: var(--coral-500);
   transform-origin: left;
   transform: scaleX(0);
   z-index: 1001;
@@ -128,12 +130,6 @@ body {
   .scroll-progress {
     display: none;
   }
-}
-
-h1,
-h2,
-h3 {
-  font-family: var(--font-main);
 }
 
 .site-header {
@@ -276,17 +272,6 @@ html {
   background: linear-gradient(transparent 60%, var(--violet-100) 60%);
 }
 
-.relief__sub {
-  font-style: normal;
-  color: var(--violet-900);
-}
-.relief__sub:hover {
-  background: linear-gradient(transparent 60%, var(--violet-100) 60%);
-}
-.hero__lead {
-  margin: 0 0 0.5rem;
-  font-size: 1.125rem;
-}
 .hero__subtitle {
   font-size: 1rem;
   color: var(--violet-900);
@@ -354,6 +339,7 @@ html {
   border-radius: 1.5rem;
   background: var(--violet-100);
   color: var(--violet-900);
+  cursor: pointer;
 }
 .js .project-row {
   opacity: 0;
@@ -364,7 +350,7 @@ html {
   position: absolute;
   top: 0.5rem;
   right: 1.5rem;
-  font-family: "Instrument serif";
+  font-family: "Instrument Serif", Georgia, serif;
   font-style: italic;
   font-size: 1.75rem;
   opacity: 0.8;
@@ -376,12 +362,12 @@ html {
 }
 
 .project-row.is-visible {
-    opacity: 1;
+  opacity: 1;
   transform: translateY(0);
 }
 
 .project-row.is-visible:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
   transition:
     opacity 550ms ease,
     transform 200ms ease;
@@ -414,9 +400,6 @@ html {
 .project-row__text {
   grid-area: text;
 }
-.project-row__link {
-  grid-area: link;
-}
 .project-row:hover .project-row__image {
   transform: rotate(0) scale(1.03);
 }
@@ -434,6 +417,7 @@ html {
   border-radius: 999px;
 }
 .project-row__link {
+  grid-area: link;
   display: grid;
   place-items: center;
   width: 3rem;
@@ -454,9 +438,6 @@ html {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-}
-.project-row {
-  cursor: pointer;
 }
 @media (max-width: 55rem) {
   .project-row {
@@ -534,7 +515,6 @@ html {
 .about__media img {
   display: block;
   max-height: 55vh;
-  width: 100%;
   max-width: 100%;
   width: auto;
   height: auto;
@@ -552,7 +532,7 @@ html {
     justify-content: center;
     gap: 1.5rem;
   }
-  .about__media{
+  .about__media {
     width: 100%;
   }
   .about__media img {
@@ -561,22 +541,14 @@ html {
     max-width: 100%;
     height: auto;
     object-fit: cover;
-}
+  }
 }
 /* SECTION PARCOURS */
 
 /*Parcours*/
 
 .timeline {
-  border-left: 2px solid var(--violet-500);
-  padding-left: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.timeline {
   position: relative;
-  border-left: none;
   padding-left: 2rem;
   display: flex;
   flex-direction: column;
@@ -699,7 +671,6 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .js .timeline::before {
     transform: scaleY(1);
     transition: none;
@@ -860,7 +831,6 @@ html {
 .card-neutral {
   background-color: var(--grey);
   border: var(--violet-100) solid 1px;
-  padding: 1rem;
   border-radius: 1rem;
 }
 
@@ -962,11 +932,21 @@ html {
   animation: logo-bounce 0.7s ease-out;
 }
 @keyframes logo-bounce {
-  0%   { transform: scale(1); }
-  25%  { transform: scale(1.12, 0.88); }
-  50%  { transform: scale(0.94, 1.08) translateY(-8px); }
-  75%  { transform: scale(1.04, 0.97); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.12, 0.88);
+  }
+  50% {
+    transform: scale(0.94, 1.08) translateY(-8px);
+  }
+  75% {
+    transform: scale(1.04, 0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .skill-tag {
   position: absolute;
@@ -975,33 +955,62 @@ html {
   border-radius: 20px;
   font-size: 15px;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
   transform: scale(0) translate(0, 0);
-  
-  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-  opacity 0.3s ease;
+
+  transition:
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    opacity 0.3s ease;
 }
 
-.tag-1 { top: -10px; right: -10px; }
-.tag-2 { top: -30px;  right: 40px; }
-.tag-3 { bottom: 10px; right: 110px; }
-.tag-4 { bottom: -20px; left: 30px; }
-.tag-5 { top: 30px;  left: -35px; }
-.tag-6{top:30px; left: 130px;}
+.tag-1 {
+  top: -10px;
+  right: -10px;
+}
+.tag-2 {
+  top: -30px;
+  right: 40px;
+}
+.tag-3 {
+  bottom: 10px;
+  right: 110px;
+}
+.tag-4 {
+  bottom: -20px;
+  left: 30px;
+}
+.tag-5 {
+  top: 30px;
+  left: -35px;
+}
+.tag-6 {
+  top: 30px;
+  left: 130px;
+}
 
 .logo-wrapper:hover .skill-tag {
   opacity: 1;
   transform: scale(1);
 }
 
-.logo-wrapper:hover .tag-1 { transition-delay: 0.05s; }
-.logo-wrapper:hover .tag-2 { transition-delay: 0.10s; }
-.logo-wrapper:hover .tag-3 { transition-delay: 0.10s; }
-.logo-wrapper:hover .tag-4 { transition-delay: 0.05s; }
-.logo-wrapper:hover .tag-5 { transition-delay: 0.15s; }
+.logo-wrapper:hover .tag-1 {
+  transition-delay: 0.05s;
+}
+.logo-wrapper:hover .tag-2 {
+  transition-delay: 0.1s;
+}
+.logo-wrapper:hover .tag-3 {
+  transition-delay: 0.1s;
+}
+.logo-wrapper:hover .tag-4 {
+  transition-delay: 0.05s;
+}
+.logo-wrapper:hover .tag-5 {
+  transition-delay: 0.15s;
+}
 /*SOCIAL MEDIA*/
 .social-links {
   list-style: none;
@@ -1124,7 +1133,6 @@ html {
 
 /* HERO*/
 html.js .hero .hero__title,
-html.js .hero .hero__lead,
 html.js .hero .hero__subtitle,
 html.js .hero .btn-block {
   opacity: 0;
@@ -1132,10 +1140,6 @@ html.js .hero .btn-block {
   transition:
     opacity 650ms ease,
     transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-html.js .hero .hero__lead {
-  transition-delay: 100ms;
 }
 
 html.js .hero .hero__subtitle {
@@ -1147,7 +1151,6 @@ html.js .hero .btn-block {
 }
 
 html.js .hero.is-visible .hero__title,
-html.js .hero.is-visible .hero__lead,
 html.js .hero.is-visible .hero__subtitle,
 html.js .hero.is-visible .btn-block {
   opacity: 1;
@@ -1156,7 +1159,6 @@ html.js .hero.is-visible .btn-block {
 
 @media (prefers-reduced-motion: reduce) {
   html.js .hero .hero__title,
-  html.js .hero .hero__lead,
   html.js .hero .hero__subtitle,
   html.js .hero .btn-block {
     opacity: 1;
@@ -1202,15 +1204,6 @@ html.js .hero.is-visible .btn-block {
   color: var(--accent);
 }
 
-[data-theme="dark"] .relief__sub {
-  color: var(--accent);
-}
-
-[data-theme="dark"] .relief__sub {
-  color: #f1ecff;
-  background: linear-gradient(transparent 60%, var(--line) 60%);
-}
-
 [data-theme="dark"] .btn-primary {
   background: var(--violet-500);
   border-color: var(--violet-500);
@@ -1236,7 +1229,6 @@ html.js .hero.is-visible .btn-block {
 
 [data-theme="dark"] .btn-outline:hover {
   color: var(--on-accent);
-
 }
 [data-theme="dark"] .social-links__item .icon,
 [data-theme="dark"] .tool img,
@@ -1244,28 +1236,11 @@ html.js .hero.is-visible .btn-block {
   filter: invert(1);
 }
 
-/* ================= ACCENT CORAIL ================= */
-:root {
-  --coral-500: #ff916b;
-  --coral-300: #ffc0a8;
-}
+/* ================= ACCENT CORAIL =================
+   Ce bloc reste en fin de fichier : il doit passer après les règles
+   du mode sombre pour que le corail l'emporte. */
 
-/* 1. Phrase clé : marqueur corail */
-.relief__sub {
-  background: linear-gradient(transparent 60%, var(--coral-300) 60%);
-}
-.relief__sub:hover {
-  background: linear-gradient(transparent 60%, var(--coral-500) 60%);
-}
-[data-theme="dark"] .relief__sub {
-  color: #f1ecff;
-  background: linear-gradient(transparent 60%, rgb(255 145 107 / 0.45) 60%);
-}
-[data-theme="dark"] .relief__sub:hover {
-  background: linear-gradient(transparent 60%, rgb(255 145 107 / 0.55) 60%);
-}
-
-/* 2. CTA principal : « Me contacter » */
+/* CTA principal : « Me contacter » */
 .btn-block .btn-outline {
   background: var(--coral-500);
   border-color: var(--coral-500);
@@ -1277,7 +1252,22 @@ html.js .hero.is-visible .btn-block {
   color: var(--violet-900);
 }
 
-/* 3. Barre de progression */
-.scroll-progress {
-  background: var(--coral-500);
+/* Survol en mode sombre (mots en relief du hero) */
+[data-theme="dark"] .relief:hover {
+  background: linear-gradient(transparent 60%, var(--line) 60%);
+}
+
+/* Phrase de cierre : marqueur corail */
+.closing__quote .relief {
+  background: linear-gradient(transparent 60%, var(--coral-300) 60%);
+}
+.closing__quote .relief:hover {
+  background: linear-gradient(transparent 60%, var(--coral-500) 60%);
+}
+[data-theme="dark"] .closing__quote .relief {
+  color: #f1ecff;
+  background: linear-gradient(transparent 60%, rgb(255 145 107 / 0.45) 60%);
+}
+[data-theme="dark"] .closing__quote .relief:hover {
+  background: linear-gradient(transparent 60%, rgb(255 145 107 / 0.55) 60%);
 }
