@@ -321,7 +321,7 @@ html {
 }
 /*SECTION PROJETS*/
 .projects {
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 .project-list {
   margin: 0;
@@ -474,7 +474,7 @@ html {
 
 /*SECTION A PROPOS*/
 .about {
-  margin-top: 6rem;
+  margin-top: 4rem;
   height: 150vh;
   position: relative;
 }
@@ -535,9 +535,7 @@ html {
   opacity: 0;
   will-change: transform, opacity;
 }
-
-/* Petits écrans (ou fenêtres très basses) : plus de bloc épinglé.
-   La section s'écoule normalement et tout reste lisible. */
+/* Petits écrans*/
 @media (max-width: 768px), (max-height: 560px) {
   .about {
     height: auto;
@@ -548,7 +546,6 @@ html {
     padding: 0;
   }
 }
-
 @media (max-width: 768px) {
   .about__sticky {
     flex-direction: column;
@@ -568,8 +565,6 @@ html {
   }
 }
 /* SECTION PARCOURS */
-
-/*Parcours*/
 
 .timeline {
   position: relative;
@@ -1634,20 +1629,16 @@ html {
   font-size: 1rem;
   line-height: 1.5;
 }
-
 .resume--editorial .timeline__date {
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--violet-700);
 }
-
 .resume--editorial .timeline__role {
   font-size: 1rem;
   font-weight: 600;
   color: var(--violet-900);
 }
-
-/* Description */
 .resume--editorial .timeline__description {
   max-width: 45ch;
   margin: 0;
@@ -1655,7 +1646,6 @@ html {
   font-size: 1.0625rem;
   line-height: 1.65;
 }
-
 /* MODE SOMBRE */
 [data-theme="dark"] .resume__scroll-hint {
   background: var(--surface);
@@ -1667,7 +1657,6 @@ html {
   border-color: var(--line);
   scrollbar-color: var(--accent) var(--surface);
 }
-
 [data-theme="dark"] .resume__viewport:focus-visible {
   outline-color: var(--accent);
 }
@@ -1680,9 +1669,6 @@ html {
 [data-theme="dark"] .resume--editorial .timeline__date {
   color: var(--accent);
 }
-
-/* MOBILE ET FENÊTRES BASSES :
-   retour au défilement normal de la page */
 @media (max-width: 55rem), (max-height: 560px) {
   .resume__scroll-hint {
     display: none;
@@ -1707,8 +1693,6 @@ html {
   }
 }
 
-/* IMPRESSION :
-   toutes les étapes restent imprimables */
 @media print {
   .resume__scroll-hint {
     display: none;
@@ -1724,13 +1708,6 @@ html {
     break-inside: avoid;
   }
 }
-/* =========================================
-   PARCOURS ÉDITORIAL + COMPÉTENCES
-   Deux colonnes sur ordinateur
-   Défilement uniquement dans le parcours
-   ========================================= */
-
-/* Même partage horizontal qu'au départ */
 .resume-layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1738,8 +1715,6 @@ html {
   align-items: start;
   margin-top: 2rem;
 }
-
-/* Évite qu'un contenu élargisse sa colonne */
 .resume-layout > .resume,
 .resume-layout > .skills {
   min-width: 0;
@@ -1751,7 +1726,6 @@ html {
 }
 
 /* TITRE ET INTRODUCTION */
-
 .resume--editorial .resume-title {
   margin-block: 1rem 1.25rem;
 
@@ -1768,9 +1742,7 @@ html {
   font-size: 1.125rem;
   line-height: 1.6;
 }
-
 /* INDICATION DE DÉFILEMENT */
-
 .resume__scroll-hint {
   display: flex;
   justify-content: space-between;
@@ -1825,13 +1797,10 @@ html {
   padding-left: 1.75rem;
 }
 
-/* Ligne toujours visible dans le conteneur */
 .resume--editorial .timeline::before {
   transform: scaleY(1);
   transition: none;
 }
-
-/* Les étapes restent lisibles sans attendre une animation */
 .resume--editorial .timeline__item {
   display: block;
   opacity: 1;
@@ -1863,8 +1832,6 @@ html {
 
   color: var(--violet-900);
 }
-
-/* DATE ET ACTIVITÉ */
 
 .resume--editorial .timeline__meta {
   display: flex;
@@ -2019,6 +1986,10 @@ html {
 }
 [data-theme="dark"] .about__media::before {
   background-color: var(--surface);
+    background-image: url("../assets/images/background_about.png");
+     background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-color: var(--line);
   outline: none;
   box-shadow: 0 12px 24px rgb(0 0 0 / 0.3);
