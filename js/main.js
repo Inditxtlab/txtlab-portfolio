@@ -357,3 +357,40 @@ if (themeToggleBtn) {
   window.addEventListener("scroll", update, { passive: true });
   update();
 })();
+
+/* ASTÉRISQUE DU HERO : monte depuis le bas au scroll */
+(() => {
+  const hero = document.querySelector(".hero");
+  const deco = document.querySelector(".hero__deco");
+  if (!hero || !deco) return;
+
+  const clamp = (v, min = 0, max = 1) => Math.min(max, Math.max(min, v));
+  let ticking = false;
+  const SPEED = 0.3;
+  const ROTATION = 50;
+  function update() {
+    ticking = false;
+    if (reduceMotion.matches) return;
+
+    const heroH = hero.offsetHeight;
+    const decoH = deco.offsetHeight;
+    const linear = clamp((window.scrollY / heroH) * SPEED);
+    const progress = 1 - Math.pow(1 - linear, 3);
+
+    const start = decoH;
+    const end = -(heroH - decoH);
+    const y = start + (end - start) * progress;
+    deco.style.opacity = clamp(linear * 18);
+    deco.style.transform =
+      `translateY(${y}px) rotate(${progress * ROTATION}deg)`;
+  }
+  function requestUpdate() {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+  update();
+})();
